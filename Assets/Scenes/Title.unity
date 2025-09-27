@@ -849,6 +849,10 @@ MonoBehaviour:
 
     controlls
 
+    use WASD to move, Shift to duck, you
+    can use your gravity gun of certain objects by holding the left mouse button
+    ( for example picking up a key card and opening a door).
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -914,7 +918,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -334.50018, y: -270.32532, z: -543.4606, w: -285.8482}
+  m_margin: {x: -775.66345, y: -270.32532, z: -789.4745, w: -285.8482}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1307,7 +1311,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This game was made by\n\n-name1 \n\n-name2\n\n-name3\n\n-name4"
+  m_text: "This game was made by\n\n-Carl Programmer \n\n-Isaiah Programmer, Level
+    design\n\n-Jane 3D Artist\n\n-Brenda 2D Artist"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
