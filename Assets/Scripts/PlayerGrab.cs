@@ -1,42 +1,111 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
     // Fields
 
-    // Vector3 grab point
+    private float maxSpeed = 6f;
 
-    // Vector3 grabbed object
-
-    // Methods
+    private float grabDistance;
+    private Rigidbody grabbedObjectRb = null;
 
     private void Update()
     {
-        // If player presses pickup button
-            // Pickup();
+        if (Input.GetMouseButtonDown(0))
+        {
+            Pickup();
+        }
 
-        // If player presses drop button
-            // Drop();
+        if (Input.GetMouseButtonUp(0) && grabbedObjectRb != null)
+        {
+            Drop();
+        }
+
+        if (grabbedObjectRb != null)
+        {
+            Debug.DrawLine(grabbedObjectRb.position, GrabPoint(), Color.red);
+        }
+
+        // TODO Replace mouse buttons with named buttons
+    }
+
+    private void FixedUpdate() // Not ran every frame to avoid issues w/ physics
+    {
+        if (grabbedObjectRb != null) { MoveGrabbedObject(); }
     }
 
     private void Pickup()
     {
-        // If Target is not null
-            // Set grab point at target location
-            // Assign target game object to grabbedObject
+        if (Target() != null)
+        {
+            grabbedObjectRb = Target().GetComponent<Rigidbody>();
+
+            grabbedObjectRb.freezeRotation = true;
+
+            grabDistance = Vector3.Distance(transform.position, grabbedObjectRb.position);
+        }
+    }
+
+    private void Drop()
+    {
+        grabbedObjectRb.freezeRotation = false;
+
+        grabbedObjectRb = null;
     }
 
     private void MoveGrabbedObject()
     {
-        // Get desired force to add based on object mass
-        // Add force to move grabbed object closer to grab point
+        float acceleration = 25f;
+
+        Vector3 moveDirection = GrabPoint() - grabbedObjectRb.position;
+
+        Vector3 targetVelocity = moveDirection * maxSpeed;
+
+        Vector3 velocityDelta = targetVelocity - grabbedObjectRb.linearVelocity;
+
+        grabbedObjectRb.AddForce(velocityDelta * acceleration, ForceMode.Acceleration);
+
+        // TODO scale maxSpeed with Rigidbody mass
     }
 
     // Return Methods
 
-    private void Target()
+    private Transform Target()
     {
-        // Return whatever grabbable object the player is looking at
-        // Return null if not looking at grabbable object
+        // Shoot ray & store hit info
+        if (Physics.Raycast(Ray(), out RaycastHit hitInfo))
+        {
+            // Check if hit object has a rigidbody
+            if (hitInfo.transform.GetComponent<Rigidbody>() != null)
+            {
+                return hitInfo.transform;
+            }
+        }
+
+        return null;
     }
+
+    private Vector3 GrabPoint()
+    {
+        if (Physics.Raycast(Ray(), out RaycastHit hitInfo, grabDistance))
+        {
+            if (hitInfo.transform != grabbedObjectRb.transform)
+            {
+                return hitInfo.point;
+            }
+        }
+
+        return Camera.main.transform.position + (Camera.main.transform.forward * grabDistance);
+    }
+
+    private Ray Ray()
+    {
+        // Return ray from the center of the screen
+        return Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
+    }
+
+    // TODO Break connection if there is an obstruction in the way
+
+    // TODO Bring grab distance closer or further with the scrollwheel
 }

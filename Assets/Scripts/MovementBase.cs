@@ -57,6 +57,7 @@ public abstract class MovementBase : MonoBehaviour
     protected void Jump()
     {
         if (IsGrounded() == true) { rb.linearVelocity = new Vector3(rb.linearVelocity.z, jumpForce, rb.linearVelocity.z); }
+        // TODO Apply force delta using AddForce() instead of setting velocity directly
     }
 
     // Return Methods
