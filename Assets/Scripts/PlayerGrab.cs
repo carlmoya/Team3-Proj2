@@ -1,72 +1,106 @@
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
     // Fields
 
-    private float maxSpeed = 6f;
+    public float throwForce = 20f;
+    public float scrollWheelDistance = 3f;
+    public float grabbedObjectMaxSpeed = 8f;
 
     private float grabDistance;
-    private Rigidbody grabbedObjectRb = null;
+    private Rigidbody grabbedRigidbody = null;
+
+    // Methods
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Target() != null)
         {
-            Pickup();
+            if (Input.GetMouseButtonDown(0)) { Pickup(); }
         }
 
-        if (Input.GetMouseButtonUp(0) && grabbedObjectRb != null)
+        if (grabbedRigidbody != null)
         {
-            Drop();
+            if (Input.GetMouseButtonUp(0)) { Drop(); }
+
+            if (Input.GetMouseButtonDown(1)) { Throw(); }
         }
 
-        if (grabbedObjectRb != null)
-        {
-            Debug.DrawLine(grabbedObjectRb.position, GrabPoint(), Color.red);
-        }
-
-        // TODO Replace mouse buttons with named buttons
+        HandleScroll();
+        DrawDebugLine();
     }
 
     private void FixedUpdate() // Not ran every frame to avoid issues w/ physics
     {
-        if (grabbedObjectRb != null) { MoveGrabbedObject(); }
+        if (grabbedRigidbody != null) { MoveGrabbedObject(); }
     }
 
     private void Pickup()
     {
-        if (Target() != null)
-        {
-            grabbedObjectRb = Target().GetComponent<Rigidbody>();
+        // Set the grabbed rigid body to the rigidbody of the target object
+        grabbedRigidbody = Target().GetComponent<Rigidbody>();
 
-            grabbedObjectRb.freezeRotation = true;
+        // Freeze the rotation of the grabbed object
+        grabbedRigidbody.freezeRotation = true;
 
-            grabDistance = Vector3.Distance(transform.position, grabbedObjectRb.position);
-        }
+        // Set the grab distance to the distance between the player & the grabbed object
+        grabDistance = Vector3.Distance(transform.position, grabbedRigidbody.position);
     }
 
     private void Drop()
     {
-        grabbedObjectRb.freezeRotation = false;
+        // Unfreeze the rotation of the grabbed object
+        grabbedRigidbody.freezeRotation = false;
 
-        grabbedObjectRb = null;
+        // Unset the grabbed rigid body
+        grabbedRigidbody = null;
+    }
+
+    private void Throw()
+    {
+        // Add force to the rigidbody of the grabbed object
+        grabbedRigidbody.AddForce(LookDirection().direction * throwForce, ForceMode.VelocityChange);
+
+        Drop();
+    }
+
+    private void HandleScroll()
+    {
+        // Get scroll wheel axis
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+
+        // Check for scroll wheel input
+        if (Mathf.Abs(scrollInput) > 0.01f)
+        {
+            // Add scroll wheel input to grab distance
+            grabDistance += scrollInput * scrollWheelDistance;
+
+            // Clamp the grab distance to ensure it doesn't become too small or negative
+            grabDistance = Mathf.Max(grabDistance + scrollInput * scrollWheelDistance, 1f);
+        }
     }
 
     private void MoveGrabbedObject()
     {
         float acceleration = 25f;
 
-        Vector3 moveDirection = GrabPoint() - grabbedObjectRb.position;
+        // Get the direction from the grabbed object to the grab point
+        Vector3 moveDirection = GrabPoint() - grabbedRigidbody.position;
 
-        Vector3 targetVelocity = moveDirection * maxSpeed;
+        // Get the desired velocity of the grabbed object
+        Vector3 targetVelocity = moveDirection * grabbedObjectMaxSpeed;
 
-        Vector3 velocityDelta = targetVelocity - grabbedObjectRb.linearVelocity;
+        // Get the difference between the grabbed object's target velocity and current velocity
+        Vector3 velocityDelta = targetVelocity - grabbedRigidbody.linearVelocity;
 
-        grabbedObjectRb.AddForce(velocityDelta * acceleration, ForceMode.Acceleration);
+        // Add force to the rigidbody of the grabbed object
+        grabbedRigidbody.AddForce(velocityDelta * acceleration, ForceMode.Acceleration);
+    }
 
-        // TODO scale maxSpeed with Rigidbody mass
+    private void DrawDebugLine()
+    {
+        if (grabbedRigidbody != null) { Debug.DrawLine(grabbedRigidbody.position, GrabPoint(), Color.red); }
     }
 
     // Return Methods
@@ -74,13 +108,10 @@ public class PlayerGrab : MonoBehaviour
     private Transform Target()
     {
         // Shoot ray & store hit info
-        if (Physics.Raycast(Ray(), out RaycastHit hitInfo))
+        if (Physics.Raycast(LookDirection(), out RaycastHit hitInfo))
         {
             // Check if hit object has a rigidbody
-            if (hitInfo.transform.GetComponent<Rigidbody>() != null)
-            {
-                return hitInfo.transform;
-            }
+            if (hitInfo.transform.GetComponent<Rigidbody>() != null) { return hitInfo.transform; }
         }
 
         return null;
@@ -88,24 +119,19 @@ public class PlayerGrab : MonoBehaviour
 
     private Vector3 GrabPoint()
     {
-        if (Physics.Raycast(Ray(), out RaycastHit hitInfo, grabDistance))
+        // Shoot ray & store hit info
+        if (Physics.Raycast(LookDirection(), out RaycastHit hitInfo, grabDistance))
         {
-            if (hitInfo.transform != grabbedObjectRb.transform)
-            {
-                return hitInfo.point;
-            }
+            // Return the point where the ray hit the environment
+            if (hitInfo.transform != grabbedRigidbody.transform) { return hitInfo.point; }
         }
 
-        return Camera.main.transform.position + (Camera.main.transform.forward * grabDistance);
+        // Return a point in front of the player
+        return LookDirection().origin + (LookDirection().direction * grabDistance);
     }
 
-    private Ray Ray()
+    private Ray LookDirection()
     {
-        // Return ray from the center of the screen
         return Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
     }
-
-    // TODO Break connection if there is an obstruction in the way
-
-    // TODO Bring grab distance closer or further with the scrollwheel
 }
