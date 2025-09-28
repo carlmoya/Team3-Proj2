@@ -10,8 +10,10 @@ public class BreakGlasslvl1 : MonoBehaviour
         {
             //destroys the glass
             glassHP -= 1;
+            Debug.Log("glass Hp " +  glassHP);
             if (glassHP <= 0)
             {
+                Debug.Log("glass is destroyed");
                 Destroy(gameObject);
             }
             //destroys cannonball
