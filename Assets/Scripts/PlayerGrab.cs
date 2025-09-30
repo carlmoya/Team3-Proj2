@@ -11,9 +11,23 @@ public class PlayerGrab : MonoBehaviour
     private float grabDistance;
     private Rigidbody grabbedRigidbody = null;
 
+    private RigidbodyConstraints originalConstraints;
+
     // Methods
 
     private void Update()
+    {
+        HandleInput();
+
+        DrawDebugLine();
+    }
+
+    private void FixedUpdate() // Not ran every frame to avoid issues w/ physics
+    {
+        if (grabbedRigidbody != null) { MoveGrabbedObject(); }
+    }
+
+    private void HandleInput()
     {
         if (Target() != null)
         {
@@ -28,18 +42,15 @@ public class PlayerGrab : MonoBehaviour
         }
 
         HandleScroll();
-        DrawDebugLine();
-    }
-
-    private void FixedUpdate() // Not ran every frame to avoid issues w/ physics
-    {
-        if (grabbedRigidbody != null) { MoveGrabbedObject(); }
     }
 
     private void Pickup()
     {
         // Set the grabbed rigid body to the rigidbody of the target object
         grabbedRigidbody = Target().GetComponent<Rigidbody>();
+
+        // Store the rotation constraints of the grabbed object
+        originalConstraints = grabbedRigidbody.constraints;
 
         // Freeze the rotation of the grabbed object
         grabbedRigidbody.freezeRotation = true;
@@ -51,7 +62,7 @@ public class PlayerGrab : MonoBehaviour
     private void Drop()
     {
         // Unfreeze the rotation of the grabbed object
-        grabbedRigidbody.freezeRotation = false;
+        grabbedRigidbody.constraints = originalConstraints;
 
         // Unset the grabbed rigid body
         grabbedRigidbody = null;
@@ -126,7 +137,7 @@ public class PlayerGrab : MonoBehaviour
             if (hitInfo.transform != grabbedRigidbody.transform) { return hitInfo.point; }
         }
 
-        // Return a point in front of the player
+        // Fallback: return point in front of the player
         return LookDirection().origin + (LookDirection().direction * grabDistance);
     }
 

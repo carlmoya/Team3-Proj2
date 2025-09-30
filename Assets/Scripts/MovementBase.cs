@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class MovementBase : MonoBehaviour
 {
+    // TODO Apply jump force delta using AddForce() instead of setting velocity directly
+
     // Fields
 
     public float maxSpeed = 12f;
@@ -57,7 +59,6 @@ public abstract class MovementBase : MonoBehaviour
     protected void Jump()
     {
         if (IsGrounded() == true) { rb.linearVelocity = new Vector3(rb.linearVelocity.z, jumpForce, rb.linearVelocity.z); }
-        // TODO Apply force delta using AddForce() instead of setting velocity directly
     }
 
     // Return Methods

@@ -6,10 +6,9 @@ public class PlayerMovement : MovementBase
 {
     // Fields
 
-    protected new Transform camera;
-
     protected float standingHeight;
     protected float crouchingHeight;
+
     protected Coroutine heightAnimation = null;
 
     // Methods
@@ -17,8 +16,6 @@ public class PlayerMovement : MovementBase
     protected override void Start()
     {
         base.Start();
-
-        camera = GetComponentInChildren<Camera>().transform;
 
         standingHeight = transform.localScale.y;
         crouchingHeight = standingHeight / 2f;
@@ -32,7 +29,7 @@ public class PlayerMovement : MovementBase
         HandleCrouch();
     }
 
-    protected void FixedUpdate()
+    protected void FixedUpdate() // Not ran every frame to avoid issues w/ physics
     {
         Move();
     }
@@ -121,7 +118,7 @@ public class PlayerMovement : MovementBase
         Vector3 normalizedInputDirection = Vector3.ClampMagnitude(inputDirection, 1f);
 
         // Rotate input direction by camera's Y rotation
-        Vector3 movementDirection = Quaternion.Euler(0f, camera.eulerAngles.y, 0f) * normalizedInputDirection;
+        Vector3 movementDirection = Quaternion.Euler(0f, Camera.main.transform.eulerAngles.y, 0f) * normalizedInputDirection;
 
         return movementDirection;
     }

@@ -9,6 +9,7 @@ TagManager:
   - keycard
   - treasure1
   - key
+  - Enemy
   layers:
   - Default
   - TransparentFX
