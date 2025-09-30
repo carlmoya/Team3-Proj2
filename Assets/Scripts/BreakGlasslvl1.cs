@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BreakGlasslvl1 : MonoBehaviour
 {
-    public int glassHP = 3;
+    private int glassHP = 1;
     public void OnTriggerEnter(Collider other)
     {
         //when cannon fire cannon ball at glass
