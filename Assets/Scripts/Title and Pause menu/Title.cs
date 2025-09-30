@@ -17,6 +17,7 @@ public class Title : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        /*
         panel.SetActive(true);
         quitButton.SetActive(true);
         playButton.SetActive(true);
@@ -26,19 +27,18 @@ public class Title : MonoBehaviour
         title.enabled = true;
         howToPlay.enabled = false;
         Credit.enabled = false;
+        */
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void QuitGame()
     {
         Application.Quit();
     }
     public void Credits()
     {
+        SceneManager.LoadScene("Credits");
+        /*
         BacktoMenuButton.SetActive(true);
         Credit.enabled = true;
 
@@ -49,10 +49,14 @@ public class Title : MonoBehaviour
         title.enabled = false;
         howToPlay.enabled = false;
         TutorialButton.SetActive(false);
+        */
     }
     public void Tutorial()
     {
+        SceneManager.LoadScene("HowToPlay");
+
         //can be either a tutorial new scene or text to show how to play
+        /*
         howToPlay.enabled = true;
         BacktoMenuButton.SetActive(true);
 
@@ -63,6 +67,7 @@ public class Title : MonoBehaviour
         CreditsButton.SetActive(false);
         title.enabled = false;
         TutorialButton.SetActive(false);
+        */
     }
     public void Play()
     {
@@ -70,6 +75,8 @@ public class Title : MonoBehaviour
     }
     public void BackButton()
     {
+        SceneManager.LoadScene("Title");
+        /*
         panel.SetActive(true);
         quitButton.SetActive(true);
         playButton.SetActive(true);
@@ -79,5 +86,6 @@ public class Title : MonoBehaviour
         howToPlay.enabled = false;
         Credit.enabled = false;
         TutorialButton.SetActive(true);
+        */
     }
 }
