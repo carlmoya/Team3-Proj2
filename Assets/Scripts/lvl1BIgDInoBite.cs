@@ -10,16 +10,14 @@ public class lvl1BIgDInoBite : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            //plays animation of gate opening
-            BiteDown.SetBool("IsBite", false);
+            //BiteDown.SetBool("IsBite", false);
         }
     }
     public void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //plays animation of gate opening
-            BiteDown.SetBool("IsBite", true);
+            //BiteDown.SetBool("IsBite", true);
         }
     }
 }
