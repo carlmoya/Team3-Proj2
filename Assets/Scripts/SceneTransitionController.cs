@@ -63,6 +63,12 @@ public class SceneTransitionController : MonoBehaviour
         StartCoroutine(QuitGameAnimation());
     }
 
+    public void ReloadScene()
+    {
+        StopAllCoroutines();
+        StartCoroutine(SceneLoadAnimation(CurrentScene()));
+    }
+
     // Coroutines
 
     private IEnumerator SceneLoadAnimation(string scene)
@@ -104,5 +110,10 @@ public class SceneTransitionController : MonoBehaviour
     private float CurrentVolume()
     {
         return 1f - canvasGroup.alpha; // Scale volume with scene transitions
+    }
+
+    public string CurrentScene()
+    {
+        return SceneManager.GetActiveScene().name;
     }
 }

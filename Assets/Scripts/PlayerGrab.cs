@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
+    // TODO Fix jitter when looking at grabbed object while moving it
+    // TODO Add a public readable (not writable) property so enemies can tell if the player has the treasure
+
     // Fields
 
     public float throwForce = 20f;
@@ -29,51 +32,63 @@ public class PlayerGrab : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Target() != null)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0)) { Pickup(); }
+            TryPickup();
         }
 
-        if (grabbedRigidbody != null)
+        if (Input.GetMouseButtonUp(0))
         {
-            if (Input.GetMouseButtonUp(0)) { Drop(); }
+            TryLetGo();
+        }
 
-            if (Input.GetMouseButtonDown(1)) { Throw(); }
+        if (Input.GetMouseButtonDown(1))
+        {
+            TryThrow();
         }
 
         HandleScroll();
     }
 
-    private void Pickup()
+    private void TryPickup()
     {
-        // Set the grabbed rigid body to the rigidbody of the target object
-        grabbedRigidbody = Target().GetComponent<Rigidbody>();
+        if (Target() != null)
+        {
+            // Set the grabbed rigid body to the rigidbody of the target object
+            grabbedRigidbody = Target().GetComponent<Rigidbody>();
 
-        // Store the rotation constraints of the grabbed object
-        originalConstraints = grabbedRigidbody.constraints;
+            // Store the rotation constraints of the grabbed object
+            originalConstraints = grabbedRigidbody.constraints;
 
-        // Freeze the rotation of the grabbed object
-        grabbedRigidbody.freezeRotation = true;
+            // Freeze the rotation of the grabbed object
+            grabbedRigidbody.freezeRotation = true;
 
-        // Set the grab distance to the distance between the player & the grabbed object
-        grabDistance = Vector3.Distance(transform.position, grabbedRigidbody.position);
+            // Set the grab distance to the distance between the player & the grabbed object
+            grabDistance = Vector3.Distance(transform.position, grabbedRigidbody.position);
+        }
     }
 
-    private void Drop()
+    private void TryLetGo()
     {
-        // Unfreeze the rotation of the grabbed object
-        grabbedRigidbody.constraints = originalConstraints;
+        if (grabbedRigidbody != null)
+        {
+            // Unfreeze the rotation of the grabbed object
+            grabbedRigidbody.constraints = originalConstraints;
 
-        // Unset the grabbed rigid body
-        grabbedRigidbody = null;
+            // Unset the grabbed rigid body
+            grabbedRigidbody = null;
+        }
     }
 
-    private void Throw()
+    private void TryThrow()
     {
-        // Add force to the rigidbody of the grabbed object
-        grabbedRigidbody.AddForce(LookDirection().direction * throwForce, ForceMode.VelocityChange);
+        if (grabbedRigidbody != null)
+        {
+            // Add force to the rigidbody of the grabbed object
+            grabbedRigidbody.AddForce(LookDirection().direction * throwForce, ForceMode.VelocityChange);
 
-        Drop();
+            TryLetGo();
+        }
     }
 
     private void HandleScroll()

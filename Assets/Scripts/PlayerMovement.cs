@@ -4,6 +4,8 @@ using System.Collections;
 
 public class PlayerMovement : MovementBase
 {
+    // TODO Fix crouch scaling bug
+
     // Fields
 
     protected float standingHeight;
@@ -46,12 +48,12 @@ public class PlayerMovement : MovementBase
     {
         if (Input.GetButtonDown("Crouch"))
         {
-            Crouch();
+            //Crouch();
         }
 
         if (Input.GetButtonUp("Crouch"))
         {
-            UnCrouch();
+            //UnCrouch();
         }
     }
 

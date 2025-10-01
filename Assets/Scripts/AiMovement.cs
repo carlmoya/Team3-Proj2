@@ -3,11 +3,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 
-public class EnemyMovement : MovementBase
+public class AiMovement : MovementBase
 {
-    // TODO Streamline into NPC Movement script
-    // TODO Rotate towards movement direction
-    // TODO Make agent avoid other nearby agents to prevent pile-ups
+    // TODO Add comments
+    // TODO Make agent avoid other nearby agents to prevent agent pile-ups
 
     // Fields
 
@@ -30,17 +29,29 @@ public class EnemyMovement : MovementBase
     protected override void Update()
     {
         base.Update();
-        GetDestination();
 
-        DrawDebugLine();
+        GetDestination();
     }
 
-    protected void FixedUpdate() // Not ran every frame to avoid issues w/ physics
+    protected void Turn(Vector3 target)
     {
-        if (base.IsGrounded() == true)
-        {
-            base.Move();
-        }
+        // Avoid turning vertically
+        target.y = transform.position.y;
+
+        // Angular speed in radians per second
+        float speed = 90f;
+
+        // Determine which direction to rotate towards
+        Vector3 targetDirection = target - transform.position;
+
+        // The step size is equal to speed times frame time
+        float singleStep = speed * Time.fixedDeltaTime;
+
+        // Get target rotation from target direction
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+
+        // Rotate towards the target by one step
+        rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, singleStep));
     }
 
     protected void GetDestination()
@@ -53,12 +64,6 @@ public class EnemyMovement : MovementBase
                 return;
             }
         }
-    }
-
-    protected void DrawDebugLine()
-    {
-        Debug.DrawLine(base.rb.position, base.rb.position + base.rb.linearVelocity, Color.red);
-        Debug.DrawLine(transform.position, transform.position + (transform.forward * 1f), Color.green);
     }
 
     // Return Methods
