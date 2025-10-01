@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class BiteDamage : MonoBehaviour
 {
-    protected void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             SceneTransitionController sceneTransitionController = GameObject.FindFirstObjectByType<SceneTransitionController>();
 
