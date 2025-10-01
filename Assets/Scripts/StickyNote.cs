@@ -30,6 +30,17 @@ public class StickyNote : MonoBehaviour
 
     private Color RandomColor() // Returns black 50% of the time
     {
-        return Random.Range(0, 2) == 0 ? Color.black : new Rainbow().RandomColor();
+        int randomNumber = Random.Range(0, 6); // Random.range is max exclusive
+
+        return randomNumber switch
+        {
+            0 => Color.red,
+            1 => Color.blue,
+            2 => new Color(0.5f, 0.1f, 1f), // Preset color does not exist for purple
+            3 => Color.black,
+            4 => Color.black,
+            5 => Color.black,
+            _ => Color.black
+        };
     }
 }

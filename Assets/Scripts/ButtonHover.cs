@@ -5,30 +5,32 @@ using UnityEngine.EventSystems;
 
 public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    // TODO Add comments
-
     // Fields
 
-    private Image buttonImage;
+    private Image buttonIndicator;
 
     // Methods
 
     private void Start()
     {
-        buttonImage = transform.GetComponentsInChildren<Image>()
+        // Get a reference to the button indicator
+        buttonIndicator = transform.GetComponentsInChildren<Image>()
             .Where(image => image.gameObject != gameObject)
             .FirstOrDefault();
 
-        buttonImage.canvasRenderer.SetAlpha(0f);
+        // Make the button indicator invisible
+        buttonIndicator.canvasRenderer.SetAlpha(0f);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        buttonImage.CrossFadeAlpha(1f, 0.1f, true);
+        // Make the button indicator visible
+        buttonIndicator.CrossFadeAlpha(1f, 0.1f, true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        buttonImage.CrossFadeAlpha(0f, 0.1f, true);
+        // Make the button indicator invisible
+        buttonIndicator.CrossFadeAlpha(0f, 0.1f, true);
     }
 }
