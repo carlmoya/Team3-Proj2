@@ -5,8 +5,6 @@ using System.Collections.Generic;
 
 public class EnemyMovement : MovementBase
 {
-    // TODO Allow moving when on the ground & grabbed by player
-    // TODO Allow throwing by player
     // TODO Streamline into NPC Movement script
     // TODO Rotate towards movement direction
     // TODO Make agent avoid other nearby agents to prevent pile-ups
@@ -39,7 +37,10 @@ public class EnemyMovement : MovementBase
 
     protected void FixedUpdate() // Not ran every frame to avoid issues w/ physics
     {
-        base.Move();
+        if (base.IsGrounded() == true)
+        {
+            base.Move();
+        }
     }
 
     protected void GetDestination()
