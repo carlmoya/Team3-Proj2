@@ -78,6 +78,11 @@ public class AiMovement : MovementBase
         return nearestTarget != null;
     }
 
+    protected bool PlayerHasTreasure()
+    {
+        return GameObject.FindFirstObjectByType<PlayerGrab>().GrabbingTreasure();
+    }
+
     protected override Vector3 MovementDirection()
     {
         NavMeshPath path = new NavMeshPath();
