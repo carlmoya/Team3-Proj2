@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerGrab : MonoBehaviour
 {
     // TODO Fix jitter when looking at grabbed object while moving it
-    // TODO Add a public readable (not writable) property so enemies can tell if the player has the treasure
+    // TODO Add comments
 
     // Fields
 
@@ -159,5 +159,20 @@ public class PlayerGrab : MonoBehaviour
     private Ray LookDirection()
     {
         return Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
+    }
+
+    public bool GrabbingTreasure()
+    {
+        if (grabbedRigidbody != null)
+        {
+            if (grabbedRigidbody.transform.CompareTag("Treasure"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        return false;
     }
 }
