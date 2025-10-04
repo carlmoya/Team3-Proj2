@@ -13,6 +13,9 @@ public class SceneSwitchTrigger : MonoBehaviour
                 case "Level1":
                     sceneTransitionController.LoadLevelTwo();
                     break;
+                case "Level2":
+                    sceneTransitionController.LoadLevelThree();
+                    break;
                 default:
                     break;
             }

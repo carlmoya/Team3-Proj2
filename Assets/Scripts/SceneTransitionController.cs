@@ -56,6 +56,11 @@ public class SceneTransitionController : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(SceneLoadAnimation("Level2"));
     }
+    public void LoadLevelThree()
+    {
+        StopAllCoroutines();
+        StartCoroutine(SceneLoadAnimation("Level3"));
+    }
 
     public void QuitGame()
     {
