@@ -4,18 +4,25 @@ using System.Collections.Generic;
 
 public class Cannon : MonoBehaviour
 {
-    [SerializeField] private Animator fireCannon;
-    public void OnTriggerEnter(Collider other)
+    // Fields
+
+    public Transform shootPoint;
+
+    // Methods
+
+    private void OnCollisionEnter(Collision collision)
     {
-        //when player places cannon ball near/in cannon
-        if (other.gameObject.CompareTag("Cannonball"))
+        if (collision.gameObject.TryGetComponent(out CannonBall cannonBall))
         {
-            
-            //add animation of the cannon fireing cannon with tag fire
-            fireCannon.SetBool("CannonLoaded", true);
-            //destroys cannon
-            Destroy(other.gameObject);
-            //should destroy glass
+            PlayerGrab playerGrab = FindFirstObjectByType<PlayerGrab>();
+
+            playerGrab.LetGoOfObject(collision.transform.GetComponent<Rigidbody>());
+
+            collision.transform.position = shootPoint.position;
+
+            collision.transform.rotation = shootPoint.rotation;
+
+            cannonBall.Fire();
         }
     }
 }

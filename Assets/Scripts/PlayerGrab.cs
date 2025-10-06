@@ -21,8 +21,6 @@ public class PlayerGrab : MonoBehaviour
     private void Update()
     {
         HandleInput();
-
-        DrawDebugLine();
     }
 
     private void FixedUpdate() // Not ran every frame to avoid issues w/ physics
@@ -34,23 +32,23 @@ public class PlayerGrab : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            TryPickup();
+            Pickup();
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            TryLetGo();
+            LetGo();
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            TryThrow();
+            Throw();
         }
 
         HandleScroll();
     }
 
-    private void TryPickup()
+    private void Pickup()
     {
         if (Target() != null)
         {
@@ -68,7 +66,7 @@ public class PlayerGrab : MonoBehaviour
         }
     }
 
-    private void TryLetGo()
+    private void LetGo()
     {
         if (grabbedRigidbody != null)
         {
@@ -80,14 +78,14 @@ public class PlayerGrab : MonoBehaviour
         }
     }
 
-    private void TryThrow()
+    private void Throw()
     {
         if (grabbedRigidbody != null)
         {
             // Add force to the rigidbody of the grabbed object
             grabbedRigidbody.AddForce(LookDirection().direction * throwForce, ForceMode.VelocityChange);
 
-            TryLetGo();
+            LetGo();
         }
     }
 
@@ -124,9 +122,12 @@ public class PlayerGrab : MonoBehaviour
         grabbedRigidbody.AddForce(velocityDelta * acceleration, ForceMode.Acceleration);
     }
 
-    private void DrawDebugLine()
+    public void LetGoOfObject(Rigidbody objectRigidbody)
     {
-        if (grabbedRigidbody != null) { Debug.DrawLine(grabbedRigidbody.position, GrabPoint(), Color.red); }
+        if (objectRigidbody == grabbedRigidbody)
+        {
+            LetGo();
+        }
     }
 
     // Return Methods

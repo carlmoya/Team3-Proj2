@@ -44,9 +44,7 @@ public class StatueMovement : AiMovement
     {
         if (collision.transform.CompareTag("Player") && PlayerHasTreasure() == true)
         {
-            SceneTransitionController sceneTransitionController = GameObject.FindFirstObjectByType<SceneTransitionController>();
-
-            sceneTransitionController.ReloadScene();
+            collision.gameObject.GetComponent<PlayerHealth>().Modify(-1);
         }
     }
 }

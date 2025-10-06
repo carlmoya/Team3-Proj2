@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class BiteDamage : MonoBehaviour
 {
+    // Trigger Methods
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        // Check if other object has a health component
+        if (other.gameObject.TryGetComponent(out HealthBase otherHealth))
         {
-            SceneTransitionController sceneTransitionController = GameObject.FindFirstObjectByType<SceneTransitionController>();
-
-            sceneTransitionController.ReloadScene();
+            otherHealth.Modify(-1);
         }
     }
 }

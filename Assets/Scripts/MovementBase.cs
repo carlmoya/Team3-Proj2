@@ -3,8 +3,6 @@ using UnityEngine;
 
 public abstract class MovementBase : MonoBehaviour
 {
-    // TODO Apply jump force delta using AddForce() instead of setting velocity directly
-
     // Fields
 
     public float maxSpeed = 12f;
