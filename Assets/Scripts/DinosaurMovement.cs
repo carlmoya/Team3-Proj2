@@ -25,9 +25,7 @@ public class DinosaurMovement : AiMovement
     {
         if (collision.transform.CompareTag("Player"))
         {
-            SceneTransitionController sceneTransitionController = GameObject.FindFirstObjectByType<SceneTransitionController>();
-
-            sceneTransitionController.ReloadScene();
+            collision.transform.GetComponent<HealthBase>().Modify(-1);
         }
     }
 }
