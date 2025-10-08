@@ -2,10 +2,21 @@ using UnityEngine;
 
 public class SceneSwitchTrigger : MonoBehaviour
 {
-    public void OnTriggerEnter(Collider other)
+    // TODO Add comments
+    // TODO Simplify logic
+
+    // Fields
+
+    private bool isSwitching = false;
+
+    // Methods
+
+    public void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Treasure"))
+        if (other.gameObject.CompareTag("Player") && FindFirstObjectByType<PlayerGrab>().GrabbingTreasure() == true && isSwitching == false)
         {
+            isSwitching = true;
+
             SceneTransitionController sceneTransitionController = GameObject.FindFirstObjectByType<SceneTransitionController>();
 
             switch (sceneTransitionController.CurrentScene())
