@@ -6,8 +6,11 @@ public class SceneTransitionController : MonoBehaviour
 {
     // TODO Add Comments
     // TODO Add developer cheats
+    // TODO Fade volume when traveling to/from non menu scenes
 
     // Fields
+
+    public bool fadeOnStart = true;
 
     private CanvasGroup canvasGroup;
 
@@ -17,12 +20,15 @@ public class SceneTransitionController : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
 
-        StartCoroutine(FadeCanvasAlpha(1f, 0f));
+        if (fadeOnStart == true)
+        {
+            StartCoroutine(FadeCanvasAlpha(1f, 0f));
+        }
     }
 
     private void Update()
     {
-        AudioListener.volume = CurrentVolume();
+        //AudioListener.volume = CurrentVolume();
     }
 
     // Button Methods

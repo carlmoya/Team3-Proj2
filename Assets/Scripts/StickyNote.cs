@@ -4,11 +4,15 @@ using System.Collections.Generic;
 
 public class StickyNote : MonoBehaviour
 {
+    // TODO Add comments
+
     // Fields
 
+    private TMP_Text stickyNoteText;
     public List<string> notes = new List<string>();
 
-    private TMP_Text stickyNoteText;
+    public static string currentNote = null;
+    public static Color currentColor = Color.white;
 
     // Methods
 
@@ -16,9 +20,34 @@ public class StickyNote : MonoBehaviour
     {
         stickyNoteText = GetComponentInChildren<TMP_Text>();
 
-        stickyNoteText.color = RandomColor();
+        if (currentNote == null) { currentNote = RandomNote(); }
 
-        stickyNoteText.text = RandomNote();
+        if (currentColor == Color.white) { currentColor = RandomColor(); }
+
+        SetNote();
+    }
+
+    public void ChangeNote()
+    {
+        string newNote = currentNote;
+
+        do { newNote = RandomNote(); } while (newNote == currentNote);
+
+        currentNote = newNote;
+
+        Color newColor = currentColor;
+
+        do { newColor = RandomColor(); } while (newColor == currentColor);
+
+        currentColor = newColor;
+
+        SetNote();
+    }
+
+    private void SetNote()
+    {
+        stickyNoteText.text = currentNote;
+        stickyNoteText.color = currentColor;
     }
 
     // Return Methods
@@ -28,18 +57,15 @@ public class StickyNote : MonoBehaviour
         return notes[Random.Range(0, notes.Count)];
     }
 
-    private Color RandomColor() // Returns black 50% of the time
+    private Color RandomColor()
     {
-        int randomNumber = Random.Range(0, 6); // Random.range is max exclusive
+        int randomNumber = Random.Range(0, 6);
 
         return randomNumber switch
         {
             0 => Color.red,
             1 => Color.blue,
             2 => new Color(0.5f, 0.1f, 1f), // Preset color does not exist for purple
-            3 => Color.black,
-            4 => Color.black,
-            5 => Color.black,
             _ => Color.black
         };
     }
