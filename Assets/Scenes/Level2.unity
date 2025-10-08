@@ -36566,7 +36566,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5234250432890415877}
-  - {fileID: 1121385113}
   - {fileID: 780341603}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41689,11 +41688,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120146331}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1121385113 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-  m_PrefabInstance: {fileID: 1996718216}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1129964093
 GameObject:
   m_ObjectHideFlags: 0
@@ -71560,67 +71554,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994311345}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1996718216
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 985270145}
-    m_Modifications:
-    - target: {fileID: 7132982337028882078, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 11.439758
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 749.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 322.31024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7934929101436585536, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8808031305490089307, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
-      propertyPath: m_Name
-      value: Snowman Painting Pair
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
 --- !u!1 &1997647543
 GameObject:
   m_ObjectHideFlags: 0
@@ -76888,11 +76821,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3177012119809549600, guid: 8dfb0d4be3080b2438bfaf5d06d9bf53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 1.2500477
       objectReference: {fileID: 0}
     - target: {fileID: 3177012119809549600, guid: 8dfb0d4be3080b2438bfaf5d06d9bf53, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000003695488
+      value: -16.499996
       objectReference: {fileID: 0}
     - target: {fileID: 3256193234083960268, guid: 8dfb0d4be3080b2438bfaf5d06d9bf53, type: 3}
       propertyPath: m_LocalPosition.x
