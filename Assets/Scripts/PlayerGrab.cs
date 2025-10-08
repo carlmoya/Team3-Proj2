@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
-    // TODO Fix jitter when looking at grabbed object while moving it
     // TODO Add comments
 
     // Fields
@@ -13,8 +12,6 @@ public class PlayerGrab : MonoBehaviour
 
     private float grabDistance;
     private Rigidbody grabbedRigidbody = null;
-
-    private RigidbodyConstraints originalConstraints;
 
     // Methods
 
@@ -55,11 +52,10 @@ public class PlayerGrab : MonoBehaviour
             // Set the grabbed rigid body to the rigidbody of the target object
             grabbedRigidbody = Target().GetComponent<Rigidbody>();
 
-            // Store the rotation constraints of the grabbed object
-            originalConstraints = grabbedRigidbody.constraints;
-
-            // Freeze the rotation of the grabbed object
-            grabbedRigidbody.freezeRotation = true;
+            // Unfreeze any position constrains on the grabbed object
+            grabbedRigidbody.constraints &= ~RigidbodyConstraints.FreezePositionX;
+            grabbedRigidbody.constraints &= ~RigidbodyConstraints.FreezePositionY;
+            grabbedRigidbody.constraints &= ~RigidbodyConstraints.FreezePositionZ;
 
             // Set the grab distance to the distance between the player & the grabbed object
             grabDistance = Vector3.Distance(transform.position, grabbedRigidbody.position);
@@ -70,9 +66,6 @@ public class PlayerGrab : MonoBehaviour
     {
         if (grabbedRigidbody != null)
         {
-            // Unfreeze the rotation of the grabbed object
-            grabbedRigidbody.constraints = originalConstraints;
-
             // Unset the grabbed rigid body
             grabbedRigidbody = null;
         }
@@ -101,7 +94,7 @@ public class PlayerGrab : MonoBehaviour
             grabDistance += scrollInput * scrollWheelDistance;
 
             // Clamp the grab distance to ensure it doesn't become too small or negative
-            grabDistance = Mathf.Max(grabDistance + scrollInput * scrollWheelDistance, 1f);
+            grabDistance = Mathf.Max(grabDistance, 1f);
         }
     }
 
@@ -146,14 +139,7 @@ public class PlayerGrab : MonoBehaviour
 
     private Vector3 GrabPoint()
     {
-        // Shoot ray & store hit info
-        if (Physics.Raycast(LookDirection(), out RaycastHit hitInfo, grabDistance))
-        {
-            // Return the point where the ray hit the environment
-            if (hitInfo.transform != grabbedRigidbody.transform) { return hitInfo.point; }
-        }
-
-        // Fallback: return point in front of the player
+        // Return point in front of the player
         return LookDirection().origin + (LookDirection().direction * grabDistance);
     }
 

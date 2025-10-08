@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
+    // TODO Add comments
+
     // Fields
 
     public float sensitivity = 5f;
@@ -33,5 +35,22 @@ public class PlayerLook : MonoBehaviour
 
         // Apply horizontal & vertical look input
         transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0f);
+    }
+
+    public void SetLookDirection(Quaternion worldRotation)
+    {
+        Vector3 euler = worldRotation.eulerAngles;
+
+        xRotation = euler.y;
+        yRotation = Mathf.Clamp(NormalizeAngle(-euler.x), -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0f);
+    }
+
+    private float NormalizeAngle(float angle)
+    {
+        angle %= 360f;
+        if (angle > 180f) angle -= 360f;
+        return angle;
     }
 }

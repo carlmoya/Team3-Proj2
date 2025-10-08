@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 20
-  scrollWheelDistance: 3
+  scrollWheelDistance: 6
   grabbedObjectMaxSpeed: 8
 --- !u!1 &8463274997449986599
 GameObject:
