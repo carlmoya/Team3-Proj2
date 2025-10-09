@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public class AiMovement : MovementBase
 {
     // TODO Add comments
-    // TODO Make agent avoid other nearby agents to prevent agent pile-ups
 
     // Fields
 
@@ -80,7 +79,7 @@ public class AiMovement : MovementBase
 
     protected bool PlayerHasTreasure()
     {
-        return GameObject.FindFirstObjectByType<PlayerGrab>().GrabbingTreasure();
+        return FindFirstObjectByType<PlayerGrab>().GrabbingTreasure();
     }
 
     protected override Vector3 MovementDirection()

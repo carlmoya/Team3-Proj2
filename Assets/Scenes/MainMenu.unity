@@ -2800,6 +2800,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1489936055}
     m_Modifications:
+    - target: {fileID: 1234524726800218696, guid: 6914f1d5fc006294cb1656658ad07ed7, type: 3}
+      propertyPath: animationFrames.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234524726800218696, guid: 6914f1d5fc006294cb1656658ad07ed7, type: 3}
+      propertyPath: 'animationFrames.Array.data[6]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ea1c9929eea02d4f91e62c57ad06137, type: 3}
+    - target: {fileID: 1234524726800218696, guid: 6914f1d5fc006294cb1656658ad07ed7, type: 3}
+      propertyPath: 'animationFrames.Array.data[7]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ea1c9929eea02d4f91e62c57ad06137, type: 3}
     - target: {fileID: 1599260663778320924, guid: 6914f1d5fc006294cb1656658ad07ed7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

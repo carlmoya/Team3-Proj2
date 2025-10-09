@@ -101,4 +101,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dfce17c8e55e724485a075be62e424d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeAudio: 0
   fadeOnStart: 1
