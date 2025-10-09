@@ -24,11 +24,37 @@ public class SceneTransitionController : MonoBehaviour
         {
             StartCoroutine(FadeCanvasAlpha(1f, 0f));
         }
+
+        if (CurrentScene() == "MainMenu" || CurrentScene() == "HowToPlay" || CurrentScene() == "Credits")
+        {
+            Cursor.visible = true; // Hide mouse cursor
+            Cursor.lockState = CursorLockMode.Confined; // Lock mouse cursor to the center of the screen
+        }
     }
 
     private void Update()
     {
         //AudioListener.volume = CurrentVolume();
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            LoadMainMenu();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            LoadLevelOne();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            LoadLevelTwo();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            LoadLevelThree();
+        }
     }
 
     // Button Methods

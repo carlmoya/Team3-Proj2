@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BiteDamage : MonoBehaviour
+public class Hazard : MonoBehaviour
 {
     // Trigger Methods
 

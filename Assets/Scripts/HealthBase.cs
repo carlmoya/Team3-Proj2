@@ -4,7 +4,7 @@ public abstract class HealthBase : MonoBehaviour
 {
     // Fields
 
-    [SerializeField] private int health = 1;
+    public int health = 1;
 
     // Methods
 

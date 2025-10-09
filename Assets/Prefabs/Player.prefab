@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 4283597509779249049}
   - component: {fileID: 2360329047151241619}
   - component: {fileID: 4309272039668020168}
+  - component: {fileID: 6615539045940893080}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -324,6 +325,19 @@ MonoBehaviour:
   throwForce: 20
   scrollWheelDistance: 6
   grabbedObjectMaxSpeed: 8
+--- !u!114 &6615539045940893080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7136312454504464420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94d153be8cca5f429a1472d0f2fab3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!1 &8463274997449986599
 GameObject:
   m_ObjectHideFlags: 0
