@@ -14,7 +14,7 @@ public class CorrectPainting : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.transform.position = new Vector3(746f, 19.85f, 302.52f);
-            //showPainting.SetActive(true);
+            showPainting.SetActive(true);
             Destroy(destroyBlock);
         }
     }
