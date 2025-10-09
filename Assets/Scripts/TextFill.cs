@@ -6,6 +6,8 @@ public class TextFill : MonoBehaviour
 {
     // Fields
 
+    public float fillSpeed = 1f;
+
     private TMP_Text textBox;
     private string textContents;
 
@@ -22,18 +24,20 @@ public class TextFill : MonoBehaviour
         textBox.text = "";
 
         // Fill the text box
-        StartCoroutine(TextFillAnimation(textContents));
+        StartCoroutine(TextFillAnimation());
     }
 
-    private IEnumerator TextFillAnimation(string textContents)
+    // Coroutines
+
+    private IEnumerator TextFillAnimation()
     {
         foreach (char character in textContents)
         {
             // Add the character to text box
             textBox.text += character;
 
-            // Wait for a fraction of a second
-            yield return new WaitForSeconds(0.025f);
+            // Wait to add another character
+            yield return new WaitForSeconds(0.025f / fillSpeed);
         }
     }
 }

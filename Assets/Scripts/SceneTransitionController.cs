@@ -1,18 +1,19 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class SceneTransitionController : MonoBehaviour
 {
     // TODO Add Comments
-    // TODO Add developer cheats
-    // TODO Fade volume when traveling to/from non menu scenes
 
     // Fields
 
+    public bool fadeAudio = true;
     public bool fadeOnStart = true;
 
     private CanvasGroup canvasGroup;
+    private string[] menuScenes = { "MainMenu", "HowToPlay", "Credits" };
 
     // Methods
 
@@ -20,12 +21,9 @@ public class SceneTransitionController : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
 
-        if (fadeOnStart == true)
-        {
-            StartCoroutine(FadeCanvasAlpha(1f, 0f));
-        }
+        if (fadeOnStart == true) { StartCoroutine(FadeCanvasAlpha(1f, 0f)); }
 
-        if (CurrentScene() == "MainMenu" || CurrentScene() == "HowToPlay" || CurrentScene() == "Credits")
+        if (menuScenes.Contains(CurrentScene()))
         {
             Cursor.visible = true; // Hide mouse cursor
             Cursor.lockState = CursorLockMode.Confined; // Lock mouse cursor to the center of the screen
@@ -34,8 +32,13 @@ public class SceneTransitionController : MonoBehaviour
 
     private void Update()
     {
-        //AudioListener.volume = CurrentVolume();
+        HandleDeveloperCheats();
 
+        HandleAudio();
+    }
+
+    private void HandleDeveloperCheats()
+    {
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             LoadMainMenu();
@@ -43,18 +46,34 @@ public class SceneTransitionController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            LoadLevelOne();
+            LoadCredits();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            LoadLevelTwo();
+            LoadHowToPlay();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            LoadLevelOne();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            LoadLevelTwo();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
             LoadLevelThree();
         }
+    }
+
+    private void HandleAudio()
+    {
+        // Scale volume with scene transitions if fadeAudio is set to true
+        if (fadeAudio == true) { AudioListener.volume = 1f - canvasGroup.alpha; }
     }
 
     // Button Methods
@@ -143,11 +162,6 @@ public class SceneTransitionController : MonoBehaviour
     }
 
     // Return Methods
-
-    private float CurrentVolume()
-    {
-        return 1f - canvasGroup.alpha; // Scale volume with scene transitions
-    }
 
     public string CurrentScene()
     {
