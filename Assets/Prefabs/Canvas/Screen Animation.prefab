@@ -87,7 +87,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e4a458b1fce091948a0c78c6d16082cc, type: 3}
   - {fileID: 21300000, guid: fff597738a548ad4e9a8f09106fe6b05, type: 3}
   - {fileID: 21300000, guid: 6ea1c9929eea02d4f91e62c57ad06137, type: 3}
-  animationSpeed: 1
+  animationSpeed: 0.5
 --- !u!222 &8197725196020444181
 CanvasRenderer:
   m_ObjectHideFlags: 0
