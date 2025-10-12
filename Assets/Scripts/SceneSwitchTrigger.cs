@@ -13,7 +13,7 @@ public class SceneSwitchTrigger : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && FindFirstObjectByType<PlayerGrab>().GrabbingTreasure() == true && isSwitching == false)
+        if ((other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Treasure")) && FindFirstObjectByType<PlayerGrab>().GrabbingTreasure() == true && isSwitching == false)
         {
             isSwitching = true;
 

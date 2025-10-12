@@ -2479,7 +2479,7 @@ GameObject:
   - component: {fileID: 1941879853}
   - component: {fileID: 1941879852}
   m_Layer: 5
-  m_Name: Back To Main Indicator (1)
+  m_Name: Typing Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
