@@ -10,6 +10,7 @@ TagManager:
   - key
   - Enemy
   - Treasure
+  - Box
   layers:
   - Default
   - TransparentFX
