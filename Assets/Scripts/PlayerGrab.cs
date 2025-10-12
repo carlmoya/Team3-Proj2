@@ -3,80 +3,77 @@ using UnityEngine;
 public class PlayerGrab : MonoBehaviour
 {
     // TODO Add comments
+    // TODO Simplify
 
     // Fields
 
     public float throwForce = 20f;
     public float scrollWheelDistance = 3f;
-    public float grabbedObjectMaxSpeed = 8f;
+    public float grabbedObjectSpeedMultiplier = 8f;
 
     private float grabDistance;
-    private Rigidbody grabbedRigidbody = null;
+    private Rigidbody grabbedObject = null;
+
+    private RigidbodyConstraints originalContraints;
 
     // Methods
 
     private void Update()
     {
-        HandleInput();
+        HandlePickup();
+        HandleThrow();
+        HandleScroll();
     }
 
     private void FixedUpdate() // Not ran every frame to avoid issues w/ physics
     {
-        if (grabbedRigidbody != null) { MoveGrabbedObject(); }
+        if (grabbedObject != null)
+        {
+            MoveGrabbedObject();
+        }
     }
 
-    private void HandleInput()
+    private void HandlePickup()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Target() != null)
         {
-            Pickup();
+            // Set the grabbed rigid body to the rigidbody of the target object
+            grabbedObject = Target().GetComponent<Rigidbody>();
+
+            // Store the rotation constraints of the grabbed object
+            originalContraints = grabbedObject.constraints;
+
+            // Freeze the rotation of the grabbed object
+            grabbedObject.freezeRotation = true;
+
+            // Set the grab distance to the distance between the player & the grabbed object
+            grabDistance = Vector3.Distance(transform.position, grabbedObject.position);
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             LetGo();
         }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            Throw();
-        }
-
-        HandleScroll();
-    }
-
-    private void Pickup()
-    {
-        if (Target() != null)
-        {
-            // Set the grabbed rigid body to the rigidbody of the target object
-            grabbedRigidbody = Target().GetComponent<Rigidbody>();
-
-            // Unfreeze any position constrains on the grabbed object
-            grabbedRigidbody.constraints &= ~RigidbodyConstraints.FreezePositionX;
-            grabbedRigidbody.constraints &= ~RigidbodyConstraints.FreezePositionY;
-            grabbedRigidbody.constraints &= ~RigidbodyConstraints.FreezePositionZ;
-
-            // Set the grab distance to the distance between the player & the grabbed object
-            grabDistance = Vector3.Distance(transform.position, grabbedRigidbody.position);
-        }
     }
 
     private void LetGo()
     {
-        if (grabbedRigidbody != null)
+        if (grabbedObject != null)
         {
+            // Unfreeze the rotation of the grabbed object
+            grabbedObject.constraints = originalContraints;
+
             // Unset the grabbed rigid body
-            grabbedRigidbody = null;
+            grabbedObject = null;
         }
     }
 
-    private void Throw()
+    private void HandleThrow()
     {
-        if (grabbedRigidbody != null)
+        if (Input.GetMouseButton(1) && grabbedObject != null)
         {
-            // Add force to the rigidbody of the grabbed object
-            grabbedRigidbody.AddForce(LookDirection().direction * throwForce, ForceMode.VelocityChange);
+            // Add force to the rigid body of the grabbed object
+            grabbedObject.AddForce(LookDirection().direction * throwForce, ForceMode.VelocityChange);
 
             LetGo();
         }
@@ -103,21 +100,21 @@ public class PlayerGrab : MonoBehaviour
         float acceleration = 25f;
 
         // Get the direction from the grabbed object to the grab point
-        Vector3 moveDirection = GrabPoint() - grabbedRigidbody.position;
+        Vector3 moveDirection = GrabPoint() - grabbedObject.position;
 
         // Get the desired velocity of the grabbed object
-        Vector3 targetVelocity = moveDirection * grabbedObjectMaxSpeed;
+        Vector3 targetVelocity = moveDirection * grabbedObjectSpeedMultiplier;
 
         // Get the difference between the grabbed object's target velocity and current velocity
-        Vector3 velocityDelta = targetVelocity - grabbedRigidbody.linearVelocity;
+        Vector3 velocityDelta = targetVelocity - grabbedObject.linearVelocity;
 
         // Add force to the rigidbody of the grabbed object
-        grabbedRigidbody.AddForce(velocityDelta * acceleration, ForceMode.Acceleration);
+        grabbedObject.AddForce(velocityDelta * acceleration, ForceMode.Acceleration);
     }
 
     public void LetGoOfObject(Rigidbody objectRigidbody)
     {
-        if (objectRigidbody == grabbedRigidbody)
+        if (objectRigidbody == grabbedObject)
         {
             LetGo();
         }
@@ -139,27 +136,26 @@ public class PlayerGrab : MonoBehaviour
 
     private Vector3 GrabPoint()
     {
-        // Return point in front of the player
+        // Shoot ray & store hit info
+        if (Physics.Raycast(LookDirection(), out RaycastHit hitInfo, grabDistance))
+        {
+            // Return the point where the ray hit the environment
+            if (hitInfo.transform != grabbedObject.transform) { return hitInfo.point; }
+        }
+
+        // Fallback: return point in front of the player
         return LookDirection().origin + (LookDirection().direction * grabDistance);
     }
 
     private Ray LookDirection()
     {
+        // Return the direction that the camera is looking towards
         return Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
     }
 
     public bool GrabbingTreasure()
     {
-        if (grabbedRigidbody != null)
-        {
-            if (grabbedRigidbody.transform.CompareTag("Treasure"))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        return false;
+        // Return true if the grabbed object is treasure
+        return grabbedObject != null && grabbedObject.CompareTag("Treasure");
     }
 }

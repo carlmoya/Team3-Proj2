@@ -322,9 +322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff88fcb34c319c24b988cf27c9ef99da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 20
+  throwForce: 50
   scrollWheelDistance: 6
-  grabbedObjectMaxSpeed: 8
+  grabbedObjectSpeedMultiplier: 8
 --- !u!114 &6615539045940893080
 MonoBehaviour:
   m_ObjectHideFlags: 0

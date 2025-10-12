@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class CannonBall : MonoBehaviour
 {
+    // TODO Add comments
+    // TODO Move Fire() method to cannon script
+
     // Fields
 
     private Rigidbody rb;
