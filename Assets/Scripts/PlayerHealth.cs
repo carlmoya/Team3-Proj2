@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : HealthBase
 {
@@ -6,9 +7,6 @@ public class PlayerHealth : HealthBase
 
     public override void Die()
     {
-        // Get reference to scene transition controller
-        SceneTransitionController sceneTransitionController = FindFirstObjectByType<SceneTransitionController>();
-
-        sceneTransitionController.ReloadScene();
+        FindFirstObjectByType<SceneTransitionController>().ReloadScene();
     }
 }

@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
-    // TODO Add comments
-    // TODO Simplify
-
     // Fields
 
     public float throwForce = 20f;
@@ -56,6 +53,17 @@ public class PlayerGrab : MonoBehaviour
         }
     }
 
+    private void HandleThrow()
+    {
+        if (Input.GetMouseButton(1) && grabbedObject != null)
+        {
+            // Add force to the rigid body of the grabbed object
+            grabbedObject.AddForce(LookDirection().direction * throwForce, ForceMode.VelocityChange);
+
+            LetGo();
+        }
+    }
+
     private void LetGo()
     {
         if (grabbedObject != null)
@@ -65,17 +73,6 @@ public class PlayerGrab : MonoBehaviour
 
             // Unset the grabbed rigid body
             grabbedObject = null;
-        }
-    }
-
-    private void HandleThrow()
-    {
-        if (Input.GetMouseButton(1) && grabbedObject != null)
-        {
-            // Add force to the rigid body of the grabbed object
-            grabbedObject.AddForce(LookDirection().direction * throwForce, ForceMode.VelocityChange);
-
-            LetGo();
         }
     }
 
@@ -112,9 +109,9 @@ public class PlayerGrab : MonoBehaviour
         grabbedObject.AddForce(velocityDelta * acceleration, ForceMode.Acceleration);
     }
 
-    public void LetGoOfObject(Rigidbody objectRigidbody)
+    public void LetGoOfObject(Rigidbody inputObject)
     {
-        if (objectRigidbody == grabbedObject)
+        if (inputObject == grabbedObject)
         {
             LetGo();
         }
