@@ -119,7 +119,7 @@ public class PlayerGrab : MonoBehaviour
 
     // Return Methods
 
-    private Transform Target()
+    public Transform Target()
     {
         // Shoot ray & store hit info
         if (Physics.Raycast(LookDirection(), out RaycastHit hitInfo))
@@ -129,6 +129,11 @@ public class PlayerGrab : MonoBehaviour
         }
 
         return null;
+    }
+
+    public bool GrabbingSomething()
+    {
+        return grabbedObject != null;
     }
 
     private Vector3 GrabPoint()

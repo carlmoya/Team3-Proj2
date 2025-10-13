@@ -1,11 +1,9 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
 
 public class ScreenAnimation : MonoBehaviour
 {
-    // TODO Add comments
-
     // Fields
 
     public Sprite[] animationFrames;
@@ -17,8 +15,10 @@ public class ScreenAnimation : MonoBehaviour
 
     private void Start()
     {
+        // Get reference to image
         image = GetComponent<Image>();
 
+        // Start static animation
         StartCoroutine(StaticAnimation());
     }
 
@@ -26,14 +26,18 @@ public class ScreenAnimation : MonoBehaviour
 
     private IEnumerator StaticAnimation()
     {
+        // Set current frame to the first frame
         int currentFrame = 0;
 
         while (true) // Runs forever unless stopped
         {
+            // Set image to current frame
             image.sprite = animationFrames[currentFrame];
 
+            // Increase current frame
             currentFrame = (currentFrame + 1) % animationFrames.Length;
 
+            // Wait to set image to current frame
             yield return new WaitForSeconds(0.05f / animationSpeed);
         }
     }
