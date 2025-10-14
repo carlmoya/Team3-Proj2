@@ -4756,7 +4756,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 467861738220382054, guid: ff080c5d9c623cf448cf180ade1c7e58, type: 3}
       propertyPath: m_Name
-      value: Museum L Painting Pair
+      value: NeededMuseum L Painting Pair
       objectReference: {fileID: 0}
     - target: {fileID: 5235800976663004688, guid: ff080c5d9c623cf448cf180ade1c7e58, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5447,7 +5447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8808031305490089307, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
       propertyPath: m_Name
-      value: Snowman Painting Pair (1)
+      value: NeededSnowman Painting Pair (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11621,7 +11621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3768293262953629186, guid: efdf507bc2c439a4ca91979aee811015, type: 3}
       propertyPath: m_Name
-      value: Ball Painting Pair (1)
+      value: NeededBall Painting Pair (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17486,7 +17486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &621441242
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26285,7 +26285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8808031305490089307, guid: 09679bfa4ca69c84e9e6570941357517, type: 3}
       propertyPath: m_Name
-      value: Snowman Painting Pair (2)
+      value: NeededSnowman Painting Pair (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38057,7 +38057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1535133732
 Transform:
   m_ObjectHideFlags: 0
