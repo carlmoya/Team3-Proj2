@@ -38,7 +38,7 @@ public class AiMovement : MovementBase
         target.y = transform.position.y;
 
         // Angular speed in radians per second
-        float speed = 90f;
+        float speed = 45f;
 
         // Determine which direction to rotate towards
         Vector3 targetDirection = target - transform.position;

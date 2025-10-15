@@ -4,13 +4,17 @@ public class BossHealth : HealthBase
 {
     // Fields
 
+    private int bossMaxHealth;
     private BossHealthBar healthBar;
 
     // Methods
 
     protected void Start()
     {
+        // Get reference to health bar
         healthBar = FindFirstObjectByType<BossHealthBar>();
+
+        bossMaxHealth = health;
 
         healthBar.AnimateFill(1);
     }
@@ -27,12 +31,13 @@ public class BossHealth : HealthBase
     {
         base.TakeDamage();
 
-        healthBar.AnimateFill((float)health / 5);
+        healthBar.AnimateFill((float)health / bossMaxHealth);
     }
 
     public override void Die()
     {
-        Invoke(nameof(LoadNextIDK), 0.25f);
+        Destroy(gameObject);
+        //Invoke(nameof(LoadNextIDK), 0.25f);
     }
 
     private void LoadNextIDK()

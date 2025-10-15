@@ -26,9 +26,24 @@ public class BossController : MonoBehaviour
 
             hazard.GetComponent<Rigidbody>().AddForce(transform.forward * 50f, ForceMode.Impulse);
 
-            //hazard.GetComponent<Rigidbody>().AddForce(transform.up * 10f, ForceMode.Impulse);
-
             yield return new WaitForSeconds(3f);
         }
+    }
+
+    // Return Methods
+
+    private bool LookingAtPlayer()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hitInfo))
+        {
+            if (hitInfo.collider.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

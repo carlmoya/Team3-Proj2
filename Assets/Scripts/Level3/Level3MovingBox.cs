@@ -22,7 +22,7 @@ public class Level3MovingBox : MonoBehaviour
             spawnPosition.y = 4f;
             spawnPosition.z = -41.53f;
             GameObject Box = Instantiate(_Box, spawnPosition, Quaternion.identity);
-            Box.GetComponent<Rigidbody>().AddForce(ImpulseVectorLR, ForceMode.Impulse);
+            Box.GetComponent<Rigidbody>().AddForce(ImpulseVectorLR, ForceMode.VelocityChange);
 
         }
     }

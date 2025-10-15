@@ -15,8 +15,5 @@ public class OneUseHazard : MonoBehaviour
             // Destroy this object
             Destroy(gameObject);
         }
-
-        // Destroy this object
-        //Destroy(gameObject);
     }
 }
