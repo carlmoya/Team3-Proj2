@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class Pager : MonoBehaviour
 {
-    public List<string> messageQueue;
+    [HideInInspector] public List<string> messageQueue;
 
     private TMP_Text pagerText;
     private Coroutine messageAnimation = null;
