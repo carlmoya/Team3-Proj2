@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 public class Level1objective : MonoBehaviour
 {
+    PlayerGrab grabTreasure;
+    CannonBall fires;
     //public GameObject mission1;
     //public GameObject mission2;
     //public GameObject mission3;
@@ -19,24 +21,26 @@ public class Level1objective : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Treasure")
-    }
     public void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Cannonball"))
+        // when player find cannon ball
+        if (other.gameObject.CompareTag("Player"))
         {
             missionText1.color = Color.green;
         }
-        if(other.gameObject.TryGetComponent(out CannonBall cannonBall))
+        // when player brings cannon to the treasure room
+        if (other.gameObject.CompareTag("Cannon"))
         {
             missionText2.color = Color.green;
         }
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Treasure"))
+
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Vent"))
         {
+            //when player open vent
             missionText3.color = Color.green;
         }
-
     }
 }

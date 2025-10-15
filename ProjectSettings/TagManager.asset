@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Treasure
   - Box
+  - Cannon
+  - Vent
   layers:
   - Default
   - TransparentFX
