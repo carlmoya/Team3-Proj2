@@ -99,7 +99,7 @@ public class BossHealthBar : MonoBehaviour
         float startFill = image.fillAmount;
 
         // Customize animation duration
-        float duration = 0.1f;
+        float duration = 0.25f;
 
         // Track & increase the elapsed time of the animation
         for (float elapsedTime = 0; elapsedTime < duration; elapsedTime += Time.deltaTime)

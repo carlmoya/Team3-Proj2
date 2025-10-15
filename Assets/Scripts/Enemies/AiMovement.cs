@@ -69,7 +69,7 @@ public class AiMovement : MovementBase
 
     protected bool GetNearestTarget(string targetTag, out Transform nearestTarget)
     {
-        nearestTarget = Physics.OverlapSphere(transform.position, 20f)
+        nearestTarget = Physics.OverlapSphere(transform.position, 40f)
             .Where(collider => collider.CompareTag(targetTag))
             .OrderBy(collider => Vector3.Distance(transform.position, collider.transform.position))
             .FirstOrDefault()?.transform;
