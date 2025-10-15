@@ -11,6 +11,11 @@ public class PickupController : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        if (GetComponent<Rigidbody>() != null)
+        {
+            GetComponent<Rotation>().enabled = false;
+        }
     }
 
     private void Pickup()

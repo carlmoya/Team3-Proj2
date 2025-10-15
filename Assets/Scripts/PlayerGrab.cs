@@ -37,6 +37,9 @@ public class PlayerGrab : MonoBehaviour
             // Set the grabbed rigid body to the rigidbody of the target object
             grabbedObject = Target().GetComponent<Rigidbody>();
 
+            // Set the grabbed rigid body to respond to physics
+            grabbedObject.isKinematic = false;
+
             // Store the rotation constraints of the grabbed object
             originalContraints = grabbedObject.constraints;
 
