@@ -64,7 +64,7 @@ public class Pager : MonoBehaviour
         }
 
         // Wait for the player to read the message
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         // Clear the pager text
         pagerText.text = "";
