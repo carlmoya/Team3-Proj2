@@ -6,18 +6,19 @@ public class TutBoxCount : MonoBehaviour
 
     void Update()
     {
-        if (boxAmount >=3)
+        if (boxAmount >= 3)
         {
-            //go to level 1
+
         }
     }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Box"))
         {
             boxAmount += 1;
             Destroy(other.gameObject);
-            Debug.Log( "You have " +  boxAmount + " boxes ");
+            Debug.Log("You have " + boxAmount + " boxes ");
         }
     }
     /*
