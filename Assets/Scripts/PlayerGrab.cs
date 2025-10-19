@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
@@ -139,7 +140,7 @@ public class PlayerGrab : MonoBehaviour
         return grabbedObject != null;
     }
 
-    private Vector3 GrabPoint()
+    public Vector3 GrabPoint()
     {
         // Shoot ray & store hit info
         if (Physics.Raycast(LookDirection(), out RaycastHit hitInfo, grabDistance))
@@ -152,7 +153,7 @@ public class PlayerGrab : MonoBehaviour
         return LookDirection().origin + (LookDirection().direction * grabDistance);
     }
 
-    private Ray LookDirection()
+    public Ray LookDirection()
     {
         // Return the direction that the camera is looking towards
         return Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
@@ -162,5 +163,15 @@ public class PlayerGrab : MonoBehaviour
     {
         // Return true if the grabbed object is treasure
         return grabbedObject != null && grabbedObject.CompareTag("Treasure");
+    }
+
+    public Transform GrabbedObject()
+    {
+        if (grabbedObject == null)
+        {
+            return null;
+        }
+
+        return grabbedObject.transform;
     }
 }

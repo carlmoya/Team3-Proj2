@@ -27534,10 +27534,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4500634416608762318, guid: 410d1561c6cdb254a8c594693229eadb, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8adadce1657522249ac3b699f6324813, type: 2}
     - target: {fileID: 6066680448866395299, guid: 410d1561c6cdb254a8c594693229eadb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.56
@@ -27578,30 +27574,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6615539045940893080, guid: 410d1561c6cdb254a8c594693229eadb, type: 3}
-      propertyPath: heart
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6615539045940893080, guid: 410d1561c6cdb254a8c594693229eadb, type: 3}
-      propertyPath: health
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6615539045940893080, guid: 410d1561c6cdb254a8c594693229eadb, type: 3}
-      propertyPath: hearts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6615539045940893080, guid: 410d1561c6cdb254a8c594693229eadb, type: 3}
-      propertyPath: 'hearts.Array.data[0]'
-      value: 
-      objectReference: {fileID: 21300000, guid: 18f387fc6eedc1b4d9c758707741650f, type: 3}
-    - target: {fileID: 6615539045940893080, guid: 410d1561c6cdb254a8c594693229eadb, type: 3}
-      propertyPath: 'hearts.Array.data[1]'
-      value: 
-      objectReference: {fileID: 21300000, guid: 076e4e9e3de2fb148aaa57a91e54430d, type: 3}
-    - target: {fileID: 6615539045940893080, guid: 410d1561c6cdb254a8c594693229eadb, type: 3}
-      propertyPath: 'hearts.Array.data[2]'
-      value: 
-      objectReference: {fileID: 21300000, guid: b878bf0d2fb750a4089fa2211b7c2bef, type: 3}
     - target: {fileID: 7136312454504464420, guid: 410d1561c6cdb254a8c594693229eadb, type: 3}
       propertyPath: m_Name
       value: Player
