@@ -68,6 +68,11 @@ public class SceneTransitionController : MonoBehaviour
         {
             LoadLevelThree();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            LoadTutorial();
+        }
     }
 
     private void HandleAudio()
@@ -111,6 +116,12 @@ public class SceneTransitionController : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(SceneLoadAnimation("Level3"));
+    }
+
+    public void LoadTutorial()
+    {
+        StopAllCoroutines();
+        StartCoroutine(SceneLoadAnimation("Tutorial"));
     }
 
     public void QuitGame()

@@ -2,33 +2,47 @@ using UnityEngine;
 
 public class TutBoxCount : MonoBehaviour
 {
-    private int boxAmount = 0;
+    // Fields
 
-    void Update()
+    private Pager pager;
+
+    private int boxesDelivered = 0;
+
+    // Methods
+
+    private void Start()
     {
-        if (boxAmount >= 3)
-        {
+        // Get reference to pager
+        pager = FindFirstObjectByType<Pager>();
 
-        }
+        pager.messageQueue.Add("Welcome to the tutorial");
+
+        pager.messageQueue.Add("Put 3 boxes in the green bin pls");
+
+        pager.messageQueue.Add("Pick them up with left click");
+
+        pager.messageQueue.Add("Use the scroll wheel for distancing");
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Box"))
         {
-            boxAmount += 1;
+            boxesDelivered += 1;
+
+            FindFirstObjectByType<PlayerGrab>().LetGoOfObject(other.transform.GetComponent<Rigidbody>());
+
             Destroy(other.gameObject);
-            Debug.Log("You have " + boxAmount + " boxes ");
+
+            if (boxesDelivered == 2)
+            {
+                pager.messageQueue.Add("1 box left");
+            }
+
+            if (boxesDelivered >= 3)
+            {
+                FindFirstObjectByType<SceneTransitionController>().LoadLevelOne();
+            }
         }
     }
-    /*
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Box"))
-        {
-            boxAmount -= 1;
-            Debug.Log("You have " + boxAmount + " boxes ");
-        }
-    }
-    */
 }
