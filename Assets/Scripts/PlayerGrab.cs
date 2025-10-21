@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
@@ -14,10 +15,14 @@ public class PlayerGrab : MonoBehaviour
 
     private RigidbodyConstraints originalContraints;
 
+    private Transform currentTarget;
+
     // Methods
 
     private void Update()
     {
+        OutlineTarget();
+
         HandlePickup();
         HandleThrow();
         HandleScroll();
@@ -49,6 +54,11 @@ public class PlayerGrab : MonoBehaviour
 
             // Set the grab distance to the distance between the player & the grabbed object
             grabDistance = Vector3.Distance(transform.position, grabbedObject.position);
+
+            if (grabbedObject.GetComponent<Outline>() != null)
+            {
+                Destroy(grabbedObject.GetComponent<Outline>());
+            }
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -121,6 +131,37 @@ public class PlayerGrab : MonoBehaviour
         }
     }
 
+    private void OutlineTarget()
+    {
+        if (grabbedObject != null) { return; }
+
+        Transform newTarget = Target();
+
+        // If target changed, remove outline from previous
+        if (currentTarget != null && currentTarget != newTarget)
+        {
+            Outline oldOutline = currentTarget.GetComponent<Outline>();
+            if (oldOutline != null)
+            {
+                Destroy(oldOutline);
+            }
+        }
+
+        currentTarget = newTarget;
+
+        // Add outline if valid and not already outlined
+        if (currentTarget != null && currentTarget != grabbedObject?.transform)
+        {
+            Outline outline = currentTarget.GetComponent<Outline>();
+            if (outline == null)
+            {
+                outline = currentTarget.gameObject.AddComponent<Outline>();
+                outline.OutlineColor = Color.green;
+                outline.OutlineWidth = 10f;
+            }
+        }
+    }
+
     // Return Methods
 
     public Transform Target()
@@ -129,7 +170,10 @@ public class PlayerGrab : MonoBehaviour
         if (Physics.Raycast(LookDirection(), out RaycastHit hitInfo))
         {
             // Check if hit object has a rigidbody
-            if (hitInfo.transform.GetComponent<Rigidbody>() != null) { return hitInfo.transform; }
+            if (hitInfo.transform.GetComponent<Rigidbody>() != null)
+            {
+                return hitInfo.transform;
+            }
         }
 
         return null;
