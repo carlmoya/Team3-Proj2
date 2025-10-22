@@ -12,11 +12,15 @@ public class Cannon : MonoBehaviour
 
     private PlayerGrab playerGrab;
 
+    private AudioSource audioSource;
+
     // Methods
 
     private void Start()
     {
         playerGrab = FindFirstObjectByType<PlayerGrab>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Collision Methods
@@ -34,6 +38,12 @@ public class Cannon : MonoBehaviour
 
             // Fire the cannon ball
             cannonBall.Fire();
+
+            AudioClip clip = audioSource.clip;
+
+            audioSource.PlayOneShot(clip);
+
+            GetComponent<Rigidbody>().AddForce(transform.forward * 10f, ForceMode.Impulse);
         }
     }
 }
