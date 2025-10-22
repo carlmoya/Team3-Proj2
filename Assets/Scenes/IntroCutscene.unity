@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 117825270}
   - component: {fileID: 117825269}
   - component: {fileID: 117825268}
+  - component: {fileID: 117825271}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -211,6 +212,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &117825271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117825267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1001 &256265781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,24 +539,131 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationFrames:
-  - frame: {fileID: 21300000, guid: 42347757927726448878dfd41a9a9ec1, type: 3}
+  - frame: {fileID: 21300000, guid: 7bd7f1238c18322468e6d0b1edfd0436, type: 3}
+    secondsOnScreen: 0.5
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 1}
+  - frame: {fileID: 21300000, guid: dabb2347c6efa934d9a31adb21e520ec, type: 3}
+    secondsOnScreen: 0.5
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: fb1ec924e5313dc449561018886f5a22, type: 3}
+    secondsOnScreen: 6
+    caption: '"Hello and welcome new hire, in this video you will learn about our
+      mission and how you are a part of it."'
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: cbb5a0ddcaeaa364581a3a10950561a3, type: 3}
+    secondsOnScreen: 0.5
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 528c0715ec68b7444992eaaeacfcf500, type: 3}
+    secondsOnScreen: 0.5
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: dda5f80e073d5164da28e25eb0ab28dd, type: 3}
+    secondsOnScreen: 0.25
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: d61a8285ea178cf4da1c23178a985478, type: 3}
     secondsOnScreen: 1
-    caption: testing
-    captionColor: {r: 1, g: 0, b: 0, a: 0}
-  - frame: {fileID: 21300000, guid: f4700861577ac4348ad99b02a25cfd7a, type: 3}
-    secondsOnScreen: 5
-    caption: there is a lot of text here. we are explaining a lot of stuff in this
-      caption
-    captionColor: {r: 0, g: 0, b: 0, a: 0}
-  - frame: {fileID: 21300000, guid: 42347757927726448878dfd41a9a9ec1, type: 3}
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 9e7a64f5fa06e3748ba9ab91863ff6e5, type: 3}
+    secondsOnScreen: 0.25
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 79ea2a78350cab54b922ab6e00288ac2, type: 3}
     secondsOnScreen: 1
-    caption: testy testy test
-    captionColor: {r: 1, g: 0, b: 0, a: 0}
-  - frame: {fileID: 21300000, guid: f4700861577ac4348ad99b02a25cfd7a, type: 3}
-    secondsOnScreen: 5
-    caption: lets do one last test with a lot of text to make sure that everything
-      works fine. the quick brown fox jumps over the lazy dog
-    captionColor: {r: 0, g: 0, b: 0, a: 0}
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: d46827d9c05975f44b50d61dfbfc9bf9, type: 3}
+    secondsOnScreen: 0.25
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: b21dd523ca04f8a42ae8cd069d1c13bd, type: 3}
+    secondsOnScreen: 1
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 663c660ffa6e15e4a97f0a6d7f08cee3, type: 3}
+    secondsOnScreen: 0.25
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 2acb33bc0dec88846aab3a957c9704a7, type: 3}
+    secondsOnScreen: 1
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 8e775ac09ed2a0748ba8a5918adb4375, type: 3}
+    secondsOnScreen: 0.25
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...to
+      give life
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 7090f020142c887438c087074b654562, type: 3}
+    secondsOnScreen: 3
+    caption: Here at LIFE Charity CO.  we make a promise to give back to the community...
+      to give life
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 2434323b0814a394db04944262d1cec7, type: 3}
+    secondsOnScreen: 0.25
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: e014809b01828a44891358afc2d02463, type: 3}
+    secondsOnScreen: 4
+    caption: '"Your Mission is PROJECT L.I.F.E"'
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 30d36788b7fe11341ae1b3a4f295efa0, type: 3}
+    secondsOnScreen: 0.25
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 8205f17f02628714aa4b105447eea138, type: 3}
+    secondsOnScreen: 3
+    caption: '"You will go in and retrive these items for charity!" '
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 8205f17f02628714aa4b105447eea138, type: 3}
+    secondsOnScreen: 4
+    caption: '"The tablet is for the medical industry, allowing them to bring things
+      back to life!"'
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 8205f17f02628714aa4b105447eea138, type: 3}
+    secondsOnScreen: 3
+    caption: '"The diamond is to continue funding to give back to the community!"'
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 2334176db74eba8408573fa321f36de0, type: 3}
+    secondsOnScreen: 0.5
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 6ec18cac166ae7b46aa37a9a6fdfd24f, type: 3}
+    secondsOnScreen: 0.5
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 6398f9d48b4592b448f75ba3106e4290, type: 3}
+    secondsOnScreen: 4
+    caption: '"Thank you for the joining our team, we''re excited to have you! Do
+      not let us down."'
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 6ec18cac166ae7b46aa37a9a6fdfd24f, type: 3}
+    secondsOnScreen: 0.5
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: e3356e36184b70f40866e6f90f7d9203, type: 3}
+    secondsOnScreen: 0.5
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: a1c36ce8c7a354c46b7a32886dab190a, type: 3}
+    secondsOnScreen: 1.5
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: e82892c39c1a5364081179943984cf06, type: 3}
+    secondsOnScreen: 0.25
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 142cf3df75b84f1418bd15687c06d20d, type: 3}
+    secondsOnScreen: 0.25
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
+  - frame: {fileID: 21300000, guid: 49871eef566cce048bebb9fcf8e2a01e, type: 3}
+    secondsOnScreen: 0.25
+    caption: 
+    captionColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &652984616
 MonoBehaviour:
   m_ObjectHideFlags: 0
