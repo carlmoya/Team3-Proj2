@@ -1806,13 +1806,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1476555743306078828, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2375735848556879615, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: fe522d7b1289c4345b686fc29ee51adf, type: 2}
+    - target: {fileID: 2588388293714741656, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4286956741597538916, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
       propertyPath: m_Name
       value: FFK_DoorFrame_01_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859689443156797817, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859689443156797817, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859689443156797817, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859689443156797817, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7111788
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859689443156797817, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5220891408672472619, guid: 4ae60d1d676da304baddd4bdfa246f16, type: 3}
       propertyPath: m_LocalScale.x
@@ -1906,7 +1934,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
@@ -10974,7 +11002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: 3 items on the painting hmmm.
+      value: 3 items on the painting... sus
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16991,67 +17019,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1821468965}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1001 &598100135
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 435417226525194005, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_Name
-      value: Pager Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: message
-      value: hidden in this place is a diamond
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 744.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 17.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 303.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 97c271c838682094dba448f7720e66c4, type: 3}
 --- !u!1001 &604346200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22058,7 +22025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: good job i...we are soo close
+      value: good job btw i- i mean we're so close
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24355,7 +24322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: hmm is it me or are these paintings...
+      value: is it just me or r these paintings sus?
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29521,6 +29488,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1083271876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083271877}
+  - component: {fileID: 1083271878}
+  m_Layer: 0
+  m_Name: Intro Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1083271877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083271876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1874203282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083271878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083271876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6e6bd346fbf4d4b9e6e50770970e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1092520603
 GameObject:
   m_ObjectHideFlags: 0
@@ -40834,7 +40845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: thats a big gap we need a bridge
+      value: that's a big gap we finna need a bridge
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43034,67 +43045,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &1583716339
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 435417226525194005, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_Name
-      value: Pager Trigger (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: message
-      value: hidden in this place is a diamond
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 744.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 303.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 97c271c838682094dba448f7720e66c4, type: 3}
 --- !u!1 &1585489773
 GameObject:
   m_ObjectHideFlags: 0
@@ -47625,7 +47575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: yes YES!! now just take the diamond
+      value: now steal the diamond like a boss
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51724,6 +51674,7 @@ Transform:
   - {fileID: 1894645452}
   - {fileID: 465503370}
   - {fileID: 386975518}
+  - {fileID: 1083271877}
   - {fileID: 27238374}
   - {fileID: 2013172038}
   - {fileID: 1585489774}
@@ -53623,83 +53574,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968192935}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1969331953
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 435417226525194005, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_Name
-      value: Pager Trigger (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369095511361653446, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_Size.x
-      value: 2.6540406
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369095511361653446, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_Size.z
-      value: 7.1019187
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369095511361653446, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_Center.x
-      value: -0.8270203
-      objectReference: {fileID: 0}
-    - target: {fileID: 2369095511361653446, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_Center.z
-      value: 1.2189442
-      objectReference: {fileID: 0}
-    - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: message
-      value: we need this item to fund our project
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 744.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 303.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 97c271c838682094dba448f7720e66c4, type: 3}
 --- !u!1001 &1969412995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53796,7 +53670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: there paintings seems to warp you
+      value: omg the paintings warp you?! :)
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57376,7 +57250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: watch out for those lights
+      value: watch out for those lights :)
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58135,7 +58009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: that bridge paint looks important
+      value: that bridge painting looks important
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -59450,6 +59324,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5581287524578044093, guid: bba6d0361b1c28d40a32513bc7dbec14, type: 3}
+      propertyPath: m_Pitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581287524578044093, guid: bba6d0361b1c28d40a32513bc7dbec14, type: 3}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6087961227730297851, guid: bba6d0361b1c28d40a32513bc7dbec14, type: 3}
       propertyPath: m_Name
       value: HUD Canvas
@@ -59837,8 +59719,6 @@ SceneRoots:
   - {fileID: 1442669010}
   - {fileID: 2122332721}
   - {fileID: 45609238}
-  - {fileID: 598100135}
-  - {fileID: 1969331953}
   - {fileID: 881659138}
   - {fileID: 374324482}
   - {fileID: 1118717892}
@@ -59850,4 +59730,3 @@ SceneRoots:
   - {fileID: 1253564874}
   - {fileID: 1743172726}
   - {fileID: 1971996480}
-  - {fileID: 1583716339}
