@@ -41,7 +41,7 @@ public class TutBoxCount : MonoBehaviour
 
             if (boxesDelivered >= 3)
             {
-                FindFirstObjectByType<SceneTransitionController>().LoadLevelOne();
+                FindFirstObjectByType<SceneTransitionController>().LoadIntroCutscene();
             }
         }
     }

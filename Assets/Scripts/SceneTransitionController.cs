@@ -46,32 +46,37 @@ public class SceneTransitionController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            LoadCredits();
+            LoadLevelOne();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            LoadHowToPlay();
+            LoadLevelTwo();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            LoadLevelOne();
+            LoadLevelThree();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            LoadLevelTwo();
+            LoadCredits();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            LoadLevelThree();
+            LoadHowToPlay();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             LoadTutorial();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            LoadIntroCutscene();
         }
     }
 
@@ -122,6 +127,12 @@ public class SceneTransitionController : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(SceneLoadAnimation("Tutorial"));
+    }
+
+    public void LoadIntroCutscene()
+    {
+        StopAllCoroutines();
+        StartCoroutine(SceneLoadAnimation("IntroCutscene"));
     }
 
     public void QuitGame()
