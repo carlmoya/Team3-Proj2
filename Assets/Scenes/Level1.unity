@@ -2077,7 +2077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: theres the cannon, take it near the tablet
+      value: There's the cannon. Bring it to the Tablet
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4952,7 +4952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: theres the taplet you do have what you need
+      value: There's the Tablet, your ready
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9481,7 +9481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: Now grab the card key to open the door
+      value: Grab the key card to open the door
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11427,7 +11427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: ' take it through this door'
+      value: Take it through the door
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12171,6 +12171,18 @@ PrefabInstance:
     - target: {fileID: 8524532309762350997, guid: bba6d0361b1c28d40a32513bc7dbec14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747318237277403093, guid: bba6d0361b1c28d40a32513bc7dbec14, type: 3}
+      propertyPath: m_margin.x
+      value: -5.1011047
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747318237277403093, guid: bba6d0361b1c28d40a32513bc7dbec14, type: 3}
+      propertyPath: m_margin.y
+      value: -6.5156326
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747318237277403093, guid: bba6d0361b1c28d40a32513bc7dbec14, type: 3}
+      propertyPath: m_margin.z
+      value: -4.3065186
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20113,7 +20125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: when you have the tablet
+      value: Once you have the tablet...
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21782,7 +21794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: now the tablet is lock up in glass
+      value: The tablet is sealed behind the glass case
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23125,7 +23137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: I take 1 cannon Ball to go with a victory smoothy
+      value: 1 cannonball, with a victory smoothie
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25377,7 +25389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: you need a cannon and a cannon ball
+      value: You need a cannon and a cannonball
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28878,7 +28890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: the tablet of LIFE so i can be a hero
+      value: The Tablet of LIFE, my key to be a hero
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33292,7 +33304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: quickly now open the vent
+      value: Quickly! Open the vent now!
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35908,7 +35920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: "\u201CWelcome you mission is to take"
+      value: Welcome.Your mission is to take the tablet
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
