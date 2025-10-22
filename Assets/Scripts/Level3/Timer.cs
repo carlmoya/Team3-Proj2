@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
 
     public float timeLeft = 180f;
 
+    public Transform lvsl3musik;
+
     private TMP_Text timerText;
 
     // Methods
@@ -28,6 +30,9 @@ public class Timer : MonoBehaviour
     {
         // Stop countdown and color animations
         StopAllCoroutines();
+
+        GetComponent<AudioSource>().Play();
+        Destroy(lvsl3musik.gameObject);
     }
 
     // Coroutines
