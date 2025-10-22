@@ -13,39 +13,39 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
-        FindFirstObjectByType<Pager>().messageQueue.Add("i wanna thank u 4 everything btw");
+        FindFirstObjectByType<Pager>().messageQueue.Add("I want to thank you");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("but i have 2 kill u now");
+        FindFirstObjectByType<Pager>().messageQueue.Add("But now, you're not needed");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("u were the best pawn i ever had tho");
+        FindFirstObjectByType<Pager>().messageQueue.Add("You were a great pawn");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("btw pls don't try 2 stop me");
+        FindFirstObjectByType<Pager>().messageQueue.Add("Its too late to stop me");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("bc its too late now");
+        FindFirstObjectByType<Pager>().messageQueue.Add("What you've done...");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("we were the bad guys the whole time");
+        FindFirstObjectByType<Pager>().messageQueue.Add("Are you really...");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("now watch as i nuke the sun");
+        FindFirstObjectByType<Pager>().messageQueue.Add("Good...evil?");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("oh don't destroy my machine btw");
+        FindFirstObjectByType<Pager>().messageQueue.Add("This machine here");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("i need it for evil");
+        FindFirstObjectByType<Pager>().messageQueue.Add("Will cover up the sky");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("it just takes a while to charge up");
+        FindFirstObjectByType<Pager>().messageQueue.Add("For indeed, LIFE stands for");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("i scheduled these in advance");
+        FindFirstObjectByType<Pager>().messageQueue.Add("Lve in FEAR");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("so hopefully i'm not dead");
+        FindFirstObjectByType<Pager>().messageQueue.Add("Do you throw that at me ");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("but if i am you'll still get these");
+        FindFirstObjectByType<Pager>().messageQueue.Add("Or use that life to get to the machine");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("okay bye now");
+        FindFirstObjectByType<Pager>().messageQueue.Add("Goodbye for now");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("oh i never said what L.I.F.E means");
+        FindFirstObjectByType<Pager>().messageQueue.Add("Oh, I never told you what L.I.F.E means");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("it means Live In F Ear");
+        FindFirstObjectByType<Pager>().messageQueue.Add("LIFE - Live in FEAR");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("okay bye for real now");
+        FindFirstObjectByType<Pager>().messageQueue.Add("This is it. Goodbye");
 
         StartCoroutine(ShootHazard());
     }
