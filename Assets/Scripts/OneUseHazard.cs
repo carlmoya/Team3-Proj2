@@ -12,6 +12,8 @@ public class OneUseHazard : MonoBehaviour
             // Damage the other object
             otherHealth.Modify(-1);
 
+            FindFirstObjectByType<PlayerGrab>().LetGoOfObject(transform.GetComponent<Rigidbody>());
+
             // Destroy this object
             Destroy(gameObject);
         }
