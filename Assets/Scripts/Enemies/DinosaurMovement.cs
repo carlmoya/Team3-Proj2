@@ -16,6 +16,7 @@ public class DinosaurMovement : AiMovement
         if (base.IsGrounded() == true)
         {
             base.Move();
+            
         }
     }
 
