@@ -50,7 +50,7 @@ public class BossController : MonoBehaviour
         {
             GameObject hazard = Instantiate(oneUseHazard, shootPoint.position, shootPoint.rotation);
 
-            hazard.GetComponent<Rigidbody>().AddForce(transform.forward * 50f, ForceMode.Impulse);
+            hazard.GetComponent<Rigidbody>().AddForce(hazard.transform.forward * 50f, ForceMode.Impulse);
 
             yield return new WaitForSeconds(3f);
         }
