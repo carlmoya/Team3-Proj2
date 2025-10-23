@@ -3753,8 +3753,8 @@ Transform:
   m_GameObject: {fileID: 93364107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.200012, y: 1.6044998, z: 39.23999}
-  m_LocalScale: {x: 22.351805, y: 2.310838, z: 1.3689451}
+  m_LocalPosition: {x: 34.200012, y: 1.1, z: 39.23999}
+  m_LocalScale: {x: 22.351805, y: 1.0116258, z: 1.3689451}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1874203282}
@@ -11002,7 +11002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: 3 items on the painting... sus
+      value: 3 items on paintings... weird
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12608,8 +12608,8 @@ Transform:
   m_GameObject: {fileID: 461258120}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.038025, y: 1.6044998, z: 43.9117}
-  m_LocalScale: {x: 2.6755111, y: 2.310838, z: 10.711842}
+  m_LocalPosition: {x: 44.038025, y: 1.0999985, z: 43.9117}
+  m_LocalScale: {x: 2.6755111, y: 1.0116258, z: 10.711842}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1874203282}
@@ -22025,7 +22025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: good job btw i- i mean we're so close
+      value: Good job, I mean.. we're so close
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24322,7 +24322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: is it just me or r these paintings sus?
+      value: Is it just me or these paintings sketchy?
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30695,7 +30695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: (soon) wait is this thing on? *beep*
+      value: Wait is this thing on? *beep*
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35116,7 +35116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: or you can do that. ..! the diamond
+      value: Or you can do that.  The diamond!
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40768,7 +40768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: alright it looks like 5 to the right 7......
+      value: Alight, looks like 5 to the right,  7......
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40845,7 +40845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: that's a big gap we finna need a bridge
+      value: That's a big gap, we need a bridge
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47575,7 +47575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: now steal the diamond like a boss
+      value: Now steal the diamond, like a boss
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53670,7 +53670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: omg the paintings warp you?! :)
+      value: These paintings seem to warp...
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54934,8 +54934,8 @@ Transform:
   m_GameObject: {fileID: 2008600239}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.419983, y: 1.6044998, z: 44.566}
-  m_LocalScale: {x: 2.6755111, y: 2.310838, z: 9.402854}
+  m_LocalPosition: {x: 24.419983, y: 1.0999994, z: 44.566}
+  m_LocalScale: {x: 2.6755111, y: 1.0116258, z: 9.402854}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1874203282}
@@ -57250,7 +57250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: watch out for those lights :)
+      value: Watch out for those lights :)
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58009,7 +58009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6877707317559192506, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: message
-      value: that bridge painting looks important
+      value: That bridge painting looks important
       objectReference: {fileID: 0}
     - target: {fileID: 8087584157275148278, guid: 97c271c838682094dba448f7720e66c4, type: 3}
       propertyPath: m_LocalPosition.x

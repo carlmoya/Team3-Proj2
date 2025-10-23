@@ -39,14 +39,6 @@ public class BossController : MonoBehaviour
 
         FindFirstObjectByType<Pager>().messageQueue.Add("Or use that life to get to the machine");
 
-        FindFirstObjectByType<Pager>().messageQueue.Add("Goodbye for now");
-
-        FindFirstObjectByType<Pager>().messageQueue.Add("Oh, I never told you what L.I.F.E means");
-
-        FindFirstObjectByType<Pager>().messageQueue.Add("LIFE - Live in FEAR");
-
-        FindFirstObjectByType<Pager>().messageQueue.Add("This is it. Goodbye");
-
         StartCoroutine(ShootHazard());
     }
 
