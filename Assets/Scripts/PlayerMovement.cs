@@ -35,6 +35,18 @@ public class PlayerMovement : MovementBase
         // Combine horizontal & vertical movement input
         Vector3 inputDirection = new Vector3(xInput, 0f, zInput);
 
+        // WAY TO CHECK IF THE PLAYER IS MOVING
+        if (inputDirection.magnitude > 0.1f)
+        {
+            // CALL MOVING ANIMATION HERE
+            Debug.Log("Moving");
+        }
+        else
+        {
+            // CALL IDLE ANIMATION HERE
+            Debug.Log("Standing still");
+        }
+
         // Prevent player from moving faster diagonally
         Vector3 normalizedInputDirection = Vector3.ClampMagnitude(inputDirection, 1f);
 
@@ -42,5 +54,18 @@ public class PlayerMovement : MovementBase
         Vector3 movementDirection = Quaternion.Euler(0f, Camera.main.transform.eulerAngles.y, 0f) * normalizedInputDirection;
 
         return movementDirection;
+    }
+
+    public bool IsMoving()
+    {
+        // Get horizontal & vertical movement input
+        float xInput = Input.GetAxis("Horizontal");
+        float zInput = Input.GetAxis("Vertical");
+
+        // Combine horizontal & vertical movement input
+        Vector3 inputDirection = new Vector3(xInput, 0f, zInput);
+
+        // Returns true if the player is moving
+        return inputDirection.magnitude > 0.1f;
     }
 }
