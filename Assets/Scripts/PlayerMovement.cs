@@ -1,71 +1,72 @@
 using UnityEngine;
 
-public class PlayerMovement : MovementBase
+// Project L.I.F.E
+
+public class PlayerMovement : BaseMovement
 {
+    // Fields
+
+    [Header("\nNon-Inherited Settings")]
+    [Space(15)]
+    public Transform mainCamera;
+
+    private PlayerLook playerlook;
+
     // Methods
 
-    protected override void Update()
+    protected override void Start()
     {
-        base.Update();
+        base.Start();
 
-        HandleJump();
+        playerlook = mainCamera.GetComponent<PlayerLook>();
     }
 
-    protected void FixedUpdate() // Not ran every frame to avoid issues w/ physics
+    protected void Update()
     {
-        Move();
+        CheckJump();
     }
 
-    protected void HandleJump()
+    protected void CheckJump()
     {
         if (Input.GetButton("Jump"))
         {
-            Jump();
+            base.StartJump();
+        }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            base.StopJump();
         }
     }
 
     // Return Methods
 
-    protected override Vector3 MovementDirection()
+    public override bool IsMoving()
     {
-        // Get horizontal & vertical movement input
-        float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("Vertical");
-
-        // Combine horizontal & vertical movement input
-        Vector3 inputDirection = new Vector3(xInput, 0f, zInput);
-
-        // WAY TO CHECK IF THE PLAYER IS MOVING
-        if (inputDirection.magnitude > 0.1f)
-        {
-            // CALL MOVING ANIMATION HERE
-            Debug.Log("Moving");
-        }
-        else
-        {
-            // CALL IDLE ANIMATION HERE
-            Debug.Log("Standing still");
-        }
-
-        // Prevent player from moving faster diagonally
-        Vector3 normalizedInputDirection = Vector3.ClampMagnitude(inputDirection, 1f);
-
-        // Rotate input direction by camera's Y rotation
-        Vector3 movementDirection = Quaternion.Euler(0f, Camera.main.transform.eulerAngles.y, 0f) * normalizedInputDirection;
-
-        return movementDirection;
+        return ClampedInputDirection().magnitude > 0.1f;
     }
 
-    public bool IsMoving()
+    protected override Vector3 MovementDirection()
     {
-        // Get horizontal & vertical movement input
-        float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("Vertical");
+        return playerlook.FlatCameraRotation() * ClampedInputDirection();
+    }
+    protected Vector3 ClampedInputDirection()
+    {
+        return Vector3.ClampMagnitude(InputDirection(), 1f);
+    }
 
-        // Combine horizontal & vertical movement input
-        Vector3 inputDirection = new Vector3(xInput, 0f, zInput);
+    protected Vector3 InputDirection()
+    {
+        return new Vector3(XInput(), 0f, ZInput());
+    }
 
-        // Returns true if the player is moving
-        return inputDirection.magnitude > 0.1f;
+    protected float XInput()
+    {
+        return Input.GetAxisRaw("Horizontal");
+    }
+
+    protected float ZInput()
+    {
+        return Input.GetAxisRaw("Vertical");
     }
 }

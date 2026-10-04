@@ -1,9 +1,9 @@
 using UnityEngine;
 
+// Project L.I.F.E
+
 public class StatueMovement : AiMovement
 {
-    // TODO Add comments
-
     // Methods
 
     protected override void Update()
@@ -16,7 +16,7 @@ public class StatueMovement : AiMovement
         }
     }
 
-    protected void FixedUpdate() // Not ran every frame to avoid issues w/ physics
+    protected override void FixedUpdate() // Not ran every frame to avoid issues w/ physics
     {
         if (BeingLookedAt() == false && IsGrounded() == true && PlayerHasTreasure() == true)
         {

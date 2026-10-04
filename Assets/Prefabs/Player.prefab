@@ -464,8 +464,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0082b8ed40e284d8c8d287478027de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 12
+  moveForce: 12
   jumpForce: 12
+  airAcceleration: 5
+  groundAcceleration: 15
+  mainCamera: {fileID: 697744962107024143}
 --- !u!114 &4309272039668020168
 MonoBehaviour:
   m_ObjectHideFlags: 0

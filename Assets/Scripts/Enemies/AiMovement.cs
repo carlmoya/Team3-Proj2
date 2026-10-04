@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 
-public class AiMovement : MovementBase
+// Project L.I.F.E
+
+public class AiMovement : BaseMovement
 {
     // TODO Add comments
 
@@ -25,10 +27,8 @@ public class AiMovement : MovementBase
         ai.updateRotation = false;
     }
 
-    protected override void Update()
+    protected virtual void Update()
     {
-        base.Update();
-
         GetDestination();
     }
 

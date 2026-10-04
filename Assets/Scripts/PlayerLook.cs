@@ -1,9 +1,9 @@
 using UnityEngine;
 
+// Project L.I.F.E
+
 public class PlayerLook : MonoBehaviour
 {
-    // TODO Add comments
-
     // Fields
 
     public float sensitivity = 5f;
@@ -15,42 +15,42 @@ public class PlayerLook : MonoBehaviour
 
     private void Start()
     {
-        Cursor.visible = false; // Hide mouse cursor
-        Cursor.lockState = CursorLockMode.Locked; // Lock mouse cursor to the center of the screen
+        // Disble mouse cursor
+        SetCursor(false);
     }
 
     private void Update()
     {
+        // Move the player camera
         Look();
     }
 
     private void Look()
     {
-        // Get horizontal look input
+        // Get horizontal mouse look input
         xRotation += Input.GetAxis("Mouse X") * sensitivity;
 
-        // Get vertical look input
+        // Get vertical mouse look input
         yRotation -= Input.GetAxis("Mouse Y") * sensitivity;
-        yRotation = Mathf.Clamp(yRotation, -90f, 90f); // Stop the player from looking upside-down
+
+        // Stop the player from looking upside-down
+        yRotation = Mathf.Clamp(yRotation, -90f, 90f);
 
         // Apply horizontal & vertical look input
         transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0f);
     }
 
-    public void SetLookDirection(Quaternion worldRotation)
+    public void SetCursor(bool enable)
     {
-        Vector3 euler = worldRotation.eulerAngles;
+        Cursor.visible = enable;
 
-        xRotation = euler.y;
-        yRotation = Mathf.Clamp(NormalizeAngle(-euler.x), -90f, 90f);
-
-        transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0f);
+        Cursor.lockState = enable ? CursorLockMode.Confined : CursorLockMode.Locked;
     }
 
-    private float NormalizeAngle(float angle)
+    // Return Methods
+
+    public Quaternion FlatCameraRotation()
     {
-        angle %= 360f;
-        if (angle > 180f) angle -= 360f;
-        return angle;
+        return Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
     }
 }

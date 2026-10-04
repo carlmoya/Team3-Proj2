@@ -47,10 +47,6 @@ public class PaintingTeleporter : MonoBehaviour
             // Rotate the target object's velocity to match the destination painting's direction
             targetRb.linearVelocity = paintingPair.transform.right * (targetRb.linearVelocity.magnitude * -1f);
 
-            if (targetRb.CompareTag("Player"))
-            {
-                playerLook.SetLookDirection(exitDirection);
-            }
         }
     }
 
